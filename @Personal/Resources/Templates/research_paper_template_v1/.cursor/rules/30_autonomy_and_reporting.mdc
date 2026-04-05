@@ -1,0 +1,26 @@
+---
+description: Autonomous execution discipline and reporting requirements
+alwaysApply: true
+---
+
+Behave as a disciplined autonomous agent inside this repo.
+
+For substantial work:
+1. create or update a plan,
+2. execute in bounded passes,
+3. keep logs current,
+4. compile and review the PDF when the manuscript is ready (include `render_audit.py --write-full-extract` and visual inspection of `paper/main.pdf`; use `pdf_quality_gate.py` for log-based checks),
+5. run audits and, when appropriate, `prompts/pdf_convergence_loop.md` until render exit criteria pass or blockers are explicit,
+6. report status clearly.
+
+Every major completion report should include:
+- objective completed,
+- current project mode,
+- files changed,
+- build/render status,
+- blockers remaining,
+- unresolved placeholders,
+- missing human inputs,
+- recommended next action.
+
+Do not say the paper is complete if placeholders, TODOs, missing citations, unresolved evidence, or unresolved PDF/render issues remain.

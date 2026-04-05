@@ -1,0 +1,25 @@
+name: autonomous-paper
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Parse spec
+        working-directory: .
+        run: python scripts/parse_spec.py
+      - name: Run spec audit
+        working-directory: .
+        run: python scripts/spec_audit.py || true
+      - name: Dry-run autonomous pipeline
+        working-directory: .
+        run: python scripts/run_autonomous_paper.py --dry-run

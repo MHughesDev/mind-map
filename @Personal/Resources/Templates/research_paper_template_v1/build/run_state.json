@@ -1,0 +1,86 @@
+{
+  "run_id": "f50456862faf",
+  "status": "completed",
+  "current_stage": "build-and-audit",
+  "completed_stages": [
+    "parse-spec",
+    "spec-audit",
+    "source-ingestion",
+    "section-generation",
+    "figure-generation",
+    "status-update",
+    "build-and-audit"
+  ],
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "source-not-found",
+      "message": "Listed source material was not found: `Existing experiments/results:`.",
+      "location": "PROJECT_SPEC.md::4.2",
+      "recommendation": "Fix the path or add the missing source file to the project."
+    },
+    {
+      "severity": "warning",
+      "code": "source-not-found",
+      "message": "Listed source material was not found: `Existing figures/tables:`.",
+      "location": "PROJECT_SPEC.md::4.2",
+      "recommendation": "Fix the path or add the missing source file to the project."
+    },
+    {
+      "severity": "warning",
+      "code": "source-not-found",
+      "message": "Listed source material was not found: `Highest-authority source for style/formatting:`.",
+      "location": "PROJECT_SPEC.md::4.2",
+      "recommendation": "Fix the path or add the missing source file to the project."
+    },
+    {
+      "severity": "warning",
+      "code": "source-not-found",
+      "message": "Listed source material was not found: `Highest-authority source for results/tables:`.",
+      "location": "PROJECT_SPEC.md::4.2",
+      "recommendation": "Fix the path or add the missing source file to the project."
+    },
+    {
+      "severity": "warning",
+      "code": "source-not-found",
+      "message": "Listed source material was not found: `Must log conflicts in `docs/DECISIONS_LOG.md`?:`.",
+      "location": "PROJECT_SPEC.md::4.2",
+      "recommendation": "Fix the path or add the missing source file to the project."
+    },
+    {
+      "severity": "warning",
+      "code": "figure-detail-incomplete",
+      "message": "`figure-1` is missing one or more detailed figure-spec fields.",
+      "location": "PROJECT_SPEC.md::11A",
+      "recommendation": "Fill structural, semantic, layout, math, rendering, and caption fields."
+    },
+    {
+      "severity": "warning",
+      "code": "figure-detail-incomplete",
+      "message": "`figure-2` is missing one or more detailed figure-spec fields.",
+      "location": "PROJECT_SPEC.md::11A",
+      "recommendation": "Fill structural, semantic, layout, math, rendering, and caption fields."
+    },
+    {
+      "severity": "warning",
+      "code": "figure-detail-incomplete",
+      "message": "`figure-3` is missing one or more detailed figure-spec fields.",
+      "location": "PROJECT_SPEC.md::11A",
+      "recommendation": "Fill structural, semantic, layout, math, rendering, and caption fields."
+    }
+  ],
+  "artifacts": {
+    "spec_json": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\build\\spec.json",
+    "spec_audit_markdown": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\docs\\SPEC_AUDIT.md",
+    "spec_audit_json": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\build\\spec_audit.json",
+    "evidence_store": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\build\\evidence_store.json",
+    "claim_grounding": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\docs\\CLAIM_GROUNDING.md",
+    "generated_files": "[\"paper/main.tex\", \"paper\\\\abstract.tex\", \"paper\\\\sections\\\\01_introduction.tex\", \"paper\\\\sections\\\\02_related_work.tex\", \"paper\\\\sections\\\\03_background.tex\", \"paper\\\\sections\\\\04_problem_setup.tex\", \"paper\\\\sections\\\\05_method.tex\", \"paper\\\\sections\\\\06_theory.tex\", \"paper\\\\sections\\\\06a_algorithms.tex\", \"paper\\\\sections\\\\07_experiments.tex\", \"paper\\\\sections\\\\08_results.tex\", \"paper\\\\sections\\\\09_discussion.tex\", \"paper\\\\sections\\\\10_limitations.tex\", \"paper\\\\sections\\\\10a_broader_impact_ethics.tex\", \"paper\\\\sections\\\\11_conclusion.tex\", \"paper\\\\sections\\\\11a_acknowledgments.tex\", \"paper\\\\appendix\\\\appendix.tex\", \"paper\\\\appendix\\\\supplementary.tex\", \"paper\\\\bib\\\\references.bib\"]",
+    "figure_manifest": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\build\\figure_specs.json",
+    "figure_tex": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\paper\\figures\\generated_from_spec.tex"
+  },
+  "repairs_attempted": [
+    "regenerated-manuscript-and-figures",
+    "figure-manifest-refresh"
+  ]
+}

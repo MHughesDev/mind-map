@@ -1,0 +1,13 @@
+---
+description: Citation integrity and no-fabrication policy
+alwaysApply: true
+---
+
+Citation policy:
+- never invent references,
+- never fabricate metadata,
+- never cite a paper you cannot identify from user-provided or explicitly authorized sources,
+- use marked stub entries if metadata is incomplete,
+- preserve claims at the strength justified by the evidence.
+
+If a citation is incomplete, use a clearly marked placeholder entry and write the missing details to docs/MISSING_INPUTS.md.

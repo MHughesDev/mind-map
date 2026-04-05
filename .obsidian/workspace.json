@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Core Domains/Technology/Computer Science/Programming/RP - TensorFlow - Large-Scale Machine Learning on Heterogeneous Distributed Systems (2016).md",
+                "file": "Core Domains/Mathematics/Discrete Math/Graph Theory/Spectral Graph Theory.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RP - TensorFlow - Large-Scale Machine Learning on Heterogeneous Distributed Systems (2016)"
+              "title": "Spectral Graph Theory"
             }
           }
         ]
@@ -182,32 +182,33 @@
   },
   "active": "46d9e7d03ce29f92",
   "lastOpenFiles": [
-    "Core Domains/Technology/Computer Science/Programming/RP - PyTorch - An Imperative Style, High-Performance Deep Learning Library (2019).md",
-    "Core Domains/Technology/Computer Science/Programming/RP - TensorFlow - Large-Scale Machine Learning on Heterogeneous Distributed Systems (2016).md",
+    "Core Domains/Mathematics/Discrete Math/Graph Theory/RP - Knowledge Graph Embedding; A Survey (2024).md",
+    "Core Domains/Mathematics/Discrete Math/Graph Theory/RP - Graph Learning; A Survey (2021).md",
     "Core Domains/Mathematics/Discrete Math/Graph Theory/RP - Characterization of Complex Networks (2007).md",
+    "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - Attention Is All You Need (2017).md",
+    "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - AutoGPT and Agent Frameworks (2023).md",
+    "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - A Few Useful Things to Know About Machine Learning (2012).md",
+    "@Personal/Resources/Templates/AI Prompts/Research Paper AI Summary Template.md",
+    "@Personal/Resources/Templates/AI Prompts",
+    "Core Domains/Technology/Computer Science/Programming/RP - TensorFlow - Large-Scale Machine Learning on Heterogeneous Distributed Systems (2016).md",
+    "Core Domains/Technology/Computer Science/Programming/RP - PyTorch - An Imperative Style, High-Performance Deep Learning Library (2019).md",
     "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - Improving Language Understanding by Generative Pre-Training (2018).md",
     "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - Random Forests (2001).md",
     "RP Rewrite List.md",
     "@Personal/Plans/RP Rewrite List.md",
-    "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - Attention Is All You Need (2017).md",
-    "@Personal/Resources/Templates/Research Paper AI Summary Template.md",
     "Core Domains/Technology/Computer Science/Human Computer Interaction/RP - Towards a Science of Human-AI Decision Making - A Survey of Empirical Studies (2021).md",
     "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - Training Language Models to Follow Instructions with Human Feedback (2022).md",
     "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - Concrete Problems in AI Safety (2016).md",
     "Core Domains/Technology/Computer Science/Human Computer Interaction/RP - Towards a Science of Human-AI Decision Making - A Research Agenda (2021).md",
-    "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - AutoGPT and Agent Frameworks (2023).md",
     "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - Voyager - An Open-Ended Embodied Agent with Large Language Models (2023).md",
     "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - Toolformer - Language Models Can Teach Themselves to Use Tools (2023).md",
     "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - ReAct - Synergizing Reasoning and Acting in Language Models (2022).md",
     "Core Domains/Technology/Computer Science/Distributed Systems/RP - GShard - Scaling Giant Models with Conditional Computation and Automatic Sharding (2020).md",
     "Core Domains/Technology/Computer Science/Distributed Systems/RP - MapReduce - Simplified Data Processing on Large Clusters (2004).md",
     "Core Domains/Mathematics/Discrete Math/Graph Theory/Spectral Graph Theory.md",
-    "Core Domains/Mathematics/Discrete Math/Graph Theory/RP - Knowledge Graph Embedding; A Survey (2024).md",
-    "Core Domains/Mathematics/Discrete Math/Graph Theory/RP - Graph Learning; A Survey (2021).md",
     "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - LLaMA - Open and Efficient Foundation Language Models (2023).md",
     "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - PaLM - Scaling Language Modeling with Pathways (2022).md",
     "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - Language Models are Few-Shot Learners (2020).md",
-    "Core Domains/Technology/Computer Science/Artificial Intelligence/RP - BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018).md",
     "@Personal/Health/BP",
     "@Personal/Journal/Daily",
     "Core Domains",
@@ -216,7 +217,6 @@
     "Mathematics/Discrete Math/Graph Theory/Networks",
     "Core Domains/Mathematics/Algebra/Algebraic Geometry",
     "Core Domains/Mathematics/Algebra/Abstract Algebra",
-    "Core Domains/Mathematics/Algebra/Linear Algebra",
-    "Core Domains/Mathematics/Discrete Math/Graph Theory"
+    "Core Domains/Mathematics/Algebra/Linear Algebra"
   ]
 }

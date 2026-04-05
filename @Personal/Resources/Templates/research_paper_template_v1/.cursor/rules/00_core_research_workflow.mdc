@@ -1,0 +1,33 @@
+---
+description: Core workflow for research-paper generation and revision
+alwaysApply: true
+---
+
+This repository is a research-paper generation workspace.
+
+Always:
+- read `PROJECT_SPEC.md` first,
+- start with a plan for multi-file work,
+- maintain modular LaTeX structure,
+- preserve unknowns explicitly,
+- never invent factual content,
+- update project status and missing-input logs for substantial work,
+- compile the PDF and review the rendered output when the manuscript is ready,
+- use the audit scripts before claiming a draft is ready.
+
+The human source of truth controls:
+- paper type
+- execution model
+- claims
+- audience
+- structure
+- formatting
+- citations
+- figures
+- evidence
+- output scope
+
+Treat legacy spec files as migration helpers, not parallel authorities, unless the user explicitly says otherwise.
+Treat the detailed figure-spec layer inside `PROJECT_SPEC.md` as the only conceptual source of truth for figures.
+
+If the spec and user note conflict, prefer the most recent explicit user instruction.

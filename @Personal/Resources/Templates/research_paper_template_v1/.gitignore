@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.DS_Store
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/*.pdf
+paper/*.toc
+# Generated full-text extract for agent review (regenerate with render_audit --write-full-extract)
+docs/PDF_TEXT_EXTRACT.md
+audit/figure_visual/exports/*.png
+audit/figure_visual/LAST_EXPORT.md

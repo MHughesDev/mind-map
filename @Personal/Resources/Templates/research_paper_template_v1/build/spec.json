@@ -1,0 +1,1294 @@
+{
+  "spec_path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\PROJECT_SPEC.md",
+  "raw_text": "# Research Project Spec - Autonomy-Oriented Master Template\n\nThis file is the single controlling brief for a research-paper project.\n\nIt is designed so an autonomous agent can, from one master file:\n- scaffold the repository,\n- draft or revise the manuscript,\n- preserve scope and non-claims,\n- distinguish mainline formalism from optional variants,\n- manage citations, figures, proofs, and release packaging,\n- and iterate on the compiled PDF until defined quality gates are met.\n\nIf a detail is not in this file or in explicitly authorized source materials, the agent must not invent it.\n\n---\n\n# How To Use\n\n1. Copy this template into a new project as `PROJECT_SPEC.md`.\n2. Fill every required field with either a real value, `UNKNOWN`, or `N/A`.\n3. Do not leave silent ambiguity.\n4. If a choice is intentionally deferred, mark that explicitly.\n5. Treat this file as the canonical source of truth for the paper.\n6. If legacy planning files exist, migrate anything still relevant into this file.\n\nRecommended launch message:\n\n`Read PROJECT_SPEC.md and execute this repository autonomously. Treat it as the controlling specification. Preserve all unknowns explicitly, do not fabricate citations, proofs, results, or experiments, and follow the PDF convergence loop until the declared done-state is reached or a blocker is explicit.`\n\n---\n\n# Global Rules\n\n- If evidence is missing, preserve the gap.\n- If citations are missing, do not fake them.\n- If proofs are missing, do not claim them complete.\n- If results are missing, do not imply they exist.\n- All manuscript prose must be reader-facing, not repo-facing.\n- Status markers belong in docs, not in reader-facing manuscript prose.\n- Appendix material is still reader-facing scholarship, not a storage dump.\n- If the main thesis is too unclear to draft responsibly, stop and ask for clarification.\n- If noncritical information is missing, continue with explicit placeholders.\n\nUse these unresolved markers in docs and planning artifacts:\n- `[BLOCKER: ...]`\n- `[NEEDS_CITATION: ...]`\n- `[NEEDS_PROOF: ...]`\n- `[NEEDS_RESULT: ...]`\n- `[OPTIONAL_LATER: ...]`\n- `[PLACEHOLDER: ...]`\n- `[UNVERIFIED: ...]`\n\nDo not leave repo-style markers in final manuscript prose unless transformed into proper scholarly language.\n\n---\n\n# Agent Execution Contract\n\nThe agent must:\n- read this file first,\n- summarize the objective, scope, constraints, deliverables, and blockers,\n- extract the allowed pass taxonomy before editing,\n- create a file-by-file execution plan,\n- scaffold or revise the LaTeX project under `paper/`,\n- create or update:\n  - `docs/PROJECT_STATUS.md`\n  - `docs/BUILD_STATUS.md`\n  - `docs/PDF_REVIEW.md`\n  - `docs/MISSING_INPUTS.md`\n  - `docs/DECISIONS_LOG.md`\n  - `docs/FIGURE_AUDIT.md`\n- preserve all unknowns explicitly,\n- keep theorem/proof/result status honest,\n- run local audit/build scripts when available,\n- use rendered PDF inspection, including figure-page raster export, during convergence passes,\n- report changed files, remaining placeholders, blockers, and the next best action.\n\nThe agent must not:\n- invent citations,\n- invent theorem statements unless explicitly authorized,\n- invent proofs,\n- invent experiments,\n- invent quantitative results,\n- invent datasets or baselines,\n- invent submission facts,\n- invent author affiliations,\n- claim completion while critical placeholders remain,\n- perform opportunistic edits outside the current pass scope.\n\n---\n\n# 0. Fill Strategy\n\n## 0.1 Project mode\n- Project mode:\n  - scaffold only\n  - outline only\n  - draft from notes\n  - revise existing paper\n  - citation hardening\n  - theory formalization\n  - experiment write-up\n  - reviewer-defense pass\n  - release-readiness pass\n  - mixed mode\n\n## 0.2 Desired draft level\n- Desired draft level:\n  - outline only\n  - structured draft\n  - polished draft\n  - preprint-ready\n  - submission-style draft\n\n## 0.3 Allowed autonomy level\n- Allowed autonomy level:\n  - high for structure, low for claims\n  - high for prose, low for math\n  - high for theory, low for citations\n  - high until explicit blocker\n  - custom:\n\n## 0.4 Stop/continue rule\n- Continue with placeholders unless blocked?:\n- Items that must block execution:\n- Items that should never block execution:\n- Checkpoint cadence, if any:\n\n## 0.5 Pass taxonomy\n- Allowed pass types:\n  - formalization pass\n  - theory-hardening pass\n  - style-convergence pass\n  - build-resolution pass\n  - citation pass\n  - figure-only pass\n  - proof-boundary pass\n  - metadata insertion pass\n  - release-readiness pass\n  - freeze confirmation pass\n- For each allowed pass, what it may change:\n- For each allowed pass, what it may not change:\n\n## 0.6 Done-state target\n- Target done-state:\n  - scaffold-complete\n  - formal-core-complete\n  - literature-grounded\n  - build-verified\n  - preprint-ready\n  - release-ready\n  - venue-submission-ready\n- Stop when target done-state is reached?:\n\n## 0.7 Freeze policy\n- Freeze begins when:\n- After freeze, allowed changes:\n- After freeze, forbidden changes:\n- Figure-only fixes allowed after freeze?:\n- Metadata-only edits allowed after freeze?:\n- What counts as a release blocker after freeze:\n\n---\n\n# 1. Project Identity\n\n## 1.1 Basic identity\n- Final paper title:\n- Short title / running title:\n- Subtitle, if any:\n- Internal codename:\n- Preferred folder name:\n- Preferred LaTeX main file name:\n- Preferred bibliography file name:\n- Primary field:\n- Subfield:\n- Secondary fields:\n- Keywords:\n- Paper category:\n  - pure theory\n  - theory + method\n  - empirical\n  - systems\n  - hybrid\n- Current stage:\n- Target venue or outlet:\n- Blind review expected?:\n- arXiv intended?:\n- Journal extension expected?:\n\n## 1.2 Canonical naming and terminology\n- Canonical object name:\n- Terms allowed in the paper:\n- Terms allowed only internally:\n- Deprecated names to avoid:\n- Search keywords that must not bleed into manuscript terminology:\n- Canonical names for:\n  - global state:\n  - session slice:\n  - external state or interface:\n  - open thought / provisional object:\n  - closed thought / accepted object:\n  - belief:\n  - closure operator:\n  - admissibility:\n  - merge:\n  - conflict policy:\n  - provenance policy:\n\n## 1.3 Reader-facing identity constraints\n- Terms or framings to avoid:\n- Informal metaphors allowed in manuscript?:\n- Informal metaphors allowed only internally?:\n- Internal codename may appear in manuscript?:\n\n---\n\n# 2. Core Objective, Scope, And Non-Claims\n\n## 2.1 Core objective\n- Main objective:\n- Core research question:\n- Main thesis / key insight:\n- Why this matters:\n- Gap in the literature or practice:\n- Reader takeaway:\n- Primary contribution type:\n- Secondary contribution types:\n\n## 2.2 Novelty framing\n- Absolute novelty claims forbidden?:\n- Preferred novelty language:\n  - synthesis\n  - formalization\n  - architecture\n  - decomposition\n  - reference framework\n  - custom:\n- Specific bounded novelty statement:\n- Novelty language to avoid:\n\n## 2.3 Paper mode and prohibited content\n- Explicitly prohibited sections:\n  - experiments\n  - results\n  - implementation\n  - ablations\n  - benchmarks\n  - case studies\n  - deployment\n  - user study\n  - other:\n- Allowed evidence types:\n  - definitions\n  - propositions\n  - theorems\n  - conjectures\n  - proofs\n  - proof sketches\n  - worked symbolic examples\n  - empirical results\n  - other:\n- Forbidden claim types:\n  - runtime claims\n  - benchmark claims\n  - implementation claims\n  - deployment claims\n  - broad generality claims beyond stated results\n  - other:\n\n## 2.4 Non-claims\n- This paper does not claim:\n- This paper does not compare:\n- This paper does not prove:\n- This paper does not implement:\n- This paper does not measure:\n- What must not be overclaimed:\n\n---\n\n# 3. Research Content Bank\n\nThis section is for the actual research content seeds the agent may use to shape the manuscript.\n\n## 3.1 Core concepts and topics\n- Core concepts that must appear:\n- Supporting concepts that should appear:\n- Optional concepts that may appear:\n- Concepts to exclude:\n- Terms that must be defined explicitly:\n- Terms that should not be used:\n\n## 3.2 Content seeds / idea fragments\n- Seed 1:\n- Seed 2:\n- Seed 3:\n- Seed 4:\n- Seed 5:\n\n## 3.3 Canonical examples or motivating cases\n- Example 1:\n- Example 2:\n- Example 3:\n- Counterexample or failure case to mention:\n\n## 3.4 Interpretation policy\n- The agent may paraphrase seeds into prose?:\n- The agent may reorganize seeds?:\n- The agent may compress repetitive seeds?:\n- The agent must preserve any seed verbatim?:\n- Verbatim passages to preserve:\n\n---\n\n# 4. Source Materials And Priority\n\n## 4.1 Priority order\n1. `PROJECT_SPEC.md`\n2. explicit user instructions\n3. `AGENTS.md` and `README.md`\n4. workflow documentation under `docs/`\n5. executable automation under `scripts/`\n6. active manuscript and build artifacts under `paper/` and `build/`\n7. legacy files only when explicitly promoted\n\n## 4.2 Available materials\n- `PROJECT_SPEC.md`\n- `AGENTS.md`\n- `README.md`\n- `docs/FRONT_TO_END_WORKFLOW.md`\n- `docs/FILE_MAP.md`\n- `docs/REVIEW_RUBRIC.md`\n- `docs/SUBMISSION_CHECKLIST.md`\n- `docs/FIGURE_VISUAL_AUDIT.md`\n- `prompts/pdf_convergence_loop.md`\n- `prompts/figure_visual_audit_loop.md`\n- `scripts/build_paper.py`\n- `scripts/render_audit.py`\n- `scripts/pdf_quality_gate.py`\n- `scripts/spec_audit.py`\n- `scripts/run_autonomous_paper.py`\n- `scripts/export_figure_pages.py`\n- `scripts/figure_visual_audit.py`\n- `paper/main.tex`\n- `paper/tex/package_setup.tex`\n- `paper/tex/theorem_setup.tex`\n- `paper/bib/references.bib`\n\n## 4.3 Source usage rules\n- Highest-authority source for scientific content: `PROJECT_SPEC.md`\n- Highest-authority source for style/formatting: `README.md`, `AGENTS.md`, and `docs/REVIEW_RUBRIC.md`\n- Highest-authority source for theorem statements: `PROJECT_SPEC.md`\n- Highest-authority source for active manuscript state: active files under `paper/`, then built PDF, then logs\n- Highest-authority source for citation metadata: `paper/bib/references.bib` plus explicitly authorized sources\n- Highest-authority source for figure semantics: detailed figure specs in this file\n- What the agent may use style-only, not content-wise:\n- What the agent must not use at all:\n\n## 4.4 Source conflict policy\n- If sources conflict, prioritize:\n  1. `PROJECT_SPEC.md`\n  2. active manuscript files\n  3. built PDF\n  4. build and audit logs\n  5. summary docs\n- Must log conflicts in `docs/DECISIONS_LOG.md`?:\n- Must stop on core scientific conflicts?:\n\n---\n\n# 5. Claim And Evidence Map\n\n## Claim 1\n- Statement:\n- Strength:\n- Evidence available:\n- Citations required:\n- Proof required?:\n- Result required?:\n- Caveats:\n- What would weaken it:\n- Scope of validity:\n- Scope limits:\n\n## Claim 2\n- Statement:\n- Strength:\n- Evidence available:\n- Citations required:\n- Proof required?:\n- Result required?:\n- Caveats:\n- What would weaken it:\n- Scope of validity:\n- Scope limits:\n\n## Claim 3\n- Statement:\n- Strength:\n- Evidence available:\n- Citations required:\n- Proof required?:\n- Result required?:\n- Caveats:\n- What would weaken it:\n- Scope of validity:\n- Scope limits:\n\n## Claim guardrails\n- Claims to soften:\n- Claims that must not appear:\n- Claims requiring explicit caveats:\n- Known uncertainty boundaries:\n- Claims that are allowed only with proof:\n- Claims that are allowed only with citations:\n- Claims that are allowed only with results:\n\n---\n\n# 6. Literature, Related Work, And Citation Policy\n\n## 6.1 Citation and literature strategy\n- Citation pass timing:\n  - first draft\n  - second pass\n  - late-stage only\n  - custom:\n- Must-cite families:\n- Forbidden citation sources:\n- Preprints allowed?:\n- Websites allowed?:\n- Style references may influence citation density?:\n- Novelty language policy before citations are verified:\n- Unsupported claims should be softened or left marked:\n\n## 6.2 Related-work families\n- Adjacent family 1:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Adjacent family 2:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Adjacent family 3:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Adjacent family 4:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Bounded novelty statement:\n- Non-claims relative to adjacent literature:\n\n## 6.3 Citation quality policy\n- Citation density target:\n- Minimum source quality:\n- Books allowed?:\n- Reports allowed?:\n- Must every non-obvious claim be cited?:\n- Must citations be verified before inclusion?:\n- The agent may add new verified citations beyond the listed ones?:\n- The agent must not add citations unless explicitly listed?:\n- The agent should mark uncited claims as `[NEEDS_CITATION]`?:\n\n## 6.4 Citation formatting and reference behavior\n- Citation style preference:\n- In-text citation behavior:\n  - parenthetical only\n  - textual when natural\n  - mixed\n- Preferred reference granularity:\n  - one citation per paragraph when enough\n  - cite every claim cluster\n  - cite nearly every nontrivial claim\n- When multiple sources support one point, prefer:\n  - one strongest source\n  - two diverse sources\n  - foundational + recent pair\n- DOI preference:\n- URL policy:\n- arXiv formatting preference:\n- Author initials vs full names:\n- Conference/journal formatting preference:\n\n---\n\n# 7. Audience And Writing Style\n\n## 7.1 Audience\n- Primary audience:\n- Secondary audience:\n- Assumed background:\n- Concepts requiring gentle introduction:\n- Terms to define explicitly:\n\n## 7.2 Style reference section\n- Primary reference manuscript for style:\n- What may be imitated:\n  - section rhythm\n  - tone\n  - notation placement\n  - intro structure\n  - conclusion structure\n  - discussion style\n  - figure caption style\n  - theorem pacing\n  - custom:\n- What may not be copied:\n  - content\n  - claims\n  - citations\n  - formulas\n  - terminology unless authorized\n\n## 7.3 Writing controls\n- Preferred terminology:\n- Terms to avoid:\n- Tone:\n- Assertiveness level:\n- Paragraph density:\n- Jargon level:\n- Voice preference:\n- Sentence complexity preference:\n- Include intuition paragraphs?:\n- Include roadmap paragraphs?:\n- Include takeaway paragraphs?:\n- Include example-driven exposition?:\n- Reader-facing prose required?:\n\n---\n\n# 8. Section-by-Section Blueprint\n\n## 8.1 Required major sections\n- [ ] Abstract\n- [ ] Introduction\n- [ ] Related Work\n- [ ] Background / Preliminaries\n- [ ] Problem Setup\n- [ ] Method / Theory\n- [ ] Algorithms\n- [ ] Experiments\n- [ ] Results\n- [ ] Discussion\n- [ ] Limitations\n- [ ] Broader Impact / Ethics\n- [ ] Conclusion\n- [ ] Appendix\n- [ ] Supplementary Material\n- [ ] Acknowledgments\n- [ ] Other:\n\n## 8.2 Preferred section order\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n10.\n\n## 8.3 Section-by-section content plan\n\n### Section 1\n- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:\n\n### Section 2\n- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:\n\n### Section 3\n- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:\n\n### Section 4\n- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:\n\n### Section 5\n- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:\n\n## 8.4 Epistemic status policy\n- What may appear as a definition:\n- What may appear as a proposition:\n- What may appear as a theorem:\n- What must remain a conjecture:\n- What must move to appendix:\n- What should be an open question:\n- Whether proof obligations may appear in main text:\n- Acceptable wording for unresolved results:\n\n## 8.5 Abstract / intro / conclusion controls\n- Abstract must include:\n- Abstract must exclude:\n- Introduction must emphasize:\n- Introduction must not overclaim:\n- Conclusion must restate:\n- Conclusion must not imply:\n\n---\n\n# 9. Mathematical Content And Theory Control\n\n## 9.1 Core mathematical objects\n- Core mathematical objects:\n- Sets:\n- Variables:\n- Functions:\n- Operators:\n- Relations:\n- Constraints:\n- Assumptions:\n- Boundary conditions:\n- Edge cases:\n\n## 9.2 Formal commitments and variant lock\n- Core mathematical object:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Layer semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Layer 0 policy:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Support-edge directionality:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Cross-layer dependency rule:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Conflict coexistence rule:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Admissibility regime:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Closure semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Merge semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Provenance semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Belief definition:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Recursive admissibility mainline or optional:\n- Higher-order topology core or future work:\n\n## 9.3 Mainline vs optional variants\n- Variant 1:\n  - Mainline in paper?:\n  - Appendix only?:\n  - Future work only?:\n  - Reference policy?:\n  - Must be implemented in figures?:\n- Variant 2:\n  - Mainline in paper?:\n  - Appendix only?:\n  - Future work only?:\n  - Reference policy?:\n  - Must be implemented in figures?:\n\n## 9.4 Formal statement policy\n- Allowed environments:\n- Disallowed environments:\n- Maximum number of conjectures in main text:\n- When to use remark vs proposition:\n- Whether axioms are allowed:\n- Whether algorithm environments are allowed:\n\n## 9.5 Definitions that must appear early\n1.\n2.\n3.\n4.\n5.\n\n## 9.6 Mathematical equations and formulas inventory\n- Equation / formula 1:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:\n- Equation / formula 2:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:\n- Equation / formula 3:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:\n- Equation / formula 4:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:\n\n## 9.7 Formal statement inventory\n\n### Statement 1\n- Type: proposition / lemma / theorem / corollary / definition / conjecture / remark / axiom\n- Draft statement:\n- Why it matters:\n- Proof status:\n- Required assumptions:\n- Section placement:\n\n### Statement 2\n- Type:\n- Draft statement:\n- Why it matters:\n- Proof status:\n- Required assumptions:\n- Section placement:\n\n### Statement 3\n- Type:\n- Draft statement:\n- Why it matters:\n- Proof status:\n- Required assumptions:\n- Section placement:\n\n### Statement 4\n- Type:\n- Draft statement:\n- Why it matters:\n- Proof status:\n- Required assumptions:\n- Section placement:\n\n## 9.8 Proof policy\n- Need theorems?:\n- Need lemmas?:\n- Need proofs?:\n- Need proof sketches in main text?:\n- Need full proofs in appendix?:\n- Proof rigor level:\n- The agent may draft proof skeletons when full proofs are missing?:\n- The agent must mark unresolved proof burdens as `[NEEDS_PROOF]`?:\n\n## 9.9 Notation presentation\n- Notation summary required?:\n- Placement:\n  - after abstract\n  - in preliminaries\n  - appendix only\n  - custom:\n- Table vs prose list:\n- Whether notation should reappear later:\n- Whether local symbol reminders are expected:\n- Symbols already reserved:\n- Symbols to avoid:\n- Indexing conventions:\n- Bold vector preference:\n- Matrix notation preference:\n- Equation numbering preference:\n- Theorem numbering preference:\n\n---\n\n# 10. Method / System / Architecture Blueprint\n\n- Main method / system / theorem name:\n- Plain-English summary:\n- Technical summary:\n- Major components:\n- Inputs:\n- Outputs:\n- Pipeline or logical order:\n- Online mode description:\n- Offline mode description:\n- Multi-agent behavior:\n- Memory/state model:\n- Failure modes:\n- Safety considerations:\n- Need pseudocode?:\n- Need formal algorithms?:\n- Need architecture / system description?:\n- Need design rationale section?:\n- Need complexity analysis?:\n\n---\n\n# 11. Experiments, Results, And Evaluation\n\n- Evidence sources:\n- Datasets:\n- Baselines:\n- Metrics:\n- Statistical reporting requirements:\n- Hardware / software requirements:\n- Reproducibility constraints:\n- Main results to highlight:\n- Negative results to include:\n- Required ablations:\n- Required robustness checks:\n- Required error analysis:\n- Required limitations discussion:\n- Results that are not yet verified:\n\n## 11.1 Evidence authorization by section\n- Sections allowed to make empirical claims:\n- Sections allowed to make only conceptual claims:\n- Sections where `[NEEDS_RESULT]` must appear if evidence is missing:\n\n## 11A. Worked Example And Reference Policy Layer\n- If the framework is policy-parameterized, require a reference policy family?:\n- Reference policy family:\n- Why it was chosen:\n- What it is not claiming:\n- Conservative or permissive:\n- Pedagogical or normative:\n- Worked symbolic example required?:\n- Location:\n  - main text\n  - appendix\n- Worked example must include:\n  - at least one evidence node\n  - at least one open candidate\n  - session slice\n  - merge step or merge-ready condition\n  - closure\n  - belief vs closed distinction\n  - contradiction case yes/no\n\n---\n\n# 12. Figures, Tables, And Visuals\n\nAll conceptual figure definitions belong in this file. Do not create separate conceptual figure-spec files.\n\n## 12.1 Figure plan\n\n### Figure 1\n- Purpose:\n- Must show:\n- Section placement:\n- Data required:\n- Style notes:\n\n### Figure 2\n- Purpose:\n- Must show:\n- Section placement:\n- Data required:\n- Style notes:\n\n### Figure 3\n- Purpose:\n- Must show:\n- Section placement:\n- Data required:\n- Style notes:\n\n## 12.2 Table plan\n\n### Table 1\n- Purpose:\n- Required columns:\n- Required rows:\n- Section placement:\n- Data required:\n\n### Table 2\n- Purpose:\n- Required columns:\n- Required rows:\n- Section placement:\n- Data required:\n\n## 12.3 Figure specification layer (detailed)\n\n### Figure 1: `[PLACEHOLDER: short name]`\n- Purpose:\n- Section placement:\n\n#### Structural Description\n- Type (graph, layered system, pipeline, geometric, etc):\n- Dimensionality:\n- Formal object being depicted:\n- Core elements (nodes, edges, layers, arrows, regions, etc):\n\n#### Semantic Mapping\n- Nodes represent:\n- Edges represent:\n- Layers represent:\n- Colors represent:\n- Shapes represent:\n\n#### Layout Constraints\n- Global layout (left-to-right, top-to-bottom, radial, etc):\n- Relative positioning rules:\n- Alignment constraints:\n- Required nodes/edges/layers/regions:\n- Forbidden visual semantics:\n\n#### Mathematical Correspondence\n- Related equation/operator:\n- Mapping from math to visual:\n  - Symbol to visual element:\n  - Operator to transformation in figure:\n\n#### Rendering Instructions\n- Style (minimal, academic, annotated, didactic, structural only):\n- Label requirements:\n- Legend policy:\n- Tool preference (TikZ / matplotlib / external / UNKNOWN):\n- Level of detail:\n- Intended visual hierarchy:\n- What must be visually distinguished:\n- What must not be shown:\n- What can be deferred to the caption:\n\n#### Caption Requirements\n- Caption must explain:\n- Caption must NOT assume:\n- Caption may mention concepts not shown?:\n\n#### Audit Criteria\n- Release-quality criteria:\n- Minimum readability requirements:\n- What counts as too crowded:\n- Acceptable label density:\n- Must survive grayscale?:\n- Must read standalone?:\n- Blocker conditions:\n\n### Figure 2: `[PLACEHOLDER: short name or delete this block]`\n- Purpose:\n- Section placement:\n\n#### Structural Description\n- Type (graph, layered system, pipeline, geometric, etc):\n- Dimensionality:\n- Formal object being depicted:\n- Core elements (nodes, edges, layers, arrows, regions, etc):\n\n#### Semantic Mapping\n- Nodes represent:\n- Edges represent:\n- Layers represent:\n- Colors represent:\n- Shapes represent:\n\n#### Layout Constraints\n- Global layout (left-to-right, top-to-bottom, radial, etc):\n- Relative positioning rules:\n- Alignment constraints:\n- Required nodes/edges/layers/regions:\n- Forbidden visual semantics:\n\n#### Mathematical Correspondence\n- Related equation/operator:\n- Mapping from math to visual:\n  - Symbol to visual element:\n  - Operator to transformation in figure:\n\n#### Rendering Instructions\n- Style (minimal, academic, annotated, didactic, structural only):\n- Label requirements:\n- Legend policy:\n- Tool preference (TikZ / matplotlib / external / UNKNOWN):\n- Level of detail:\n- Intended visual hierarchy:\n- What must be visually distinguished:\n- What must not be shown:\n- What can be deferred to the caption:\n\n#### Caption Requirements\n- Caption must explain:\n- Caption must NOT assume:\n- Caption may mention concepts not shown?:\n\n#### Audit Criteria\n- Release-quality criteria:\n- Minimum readability requirements:\n- What counts as too crowded:\n- Acceptable label density:\n- Must survive grayscale?:\n- Must read standalone?:\n- Blocker conditions:\n\n### Figure 3: `[PLACEHOLDER: short name or delete this block]`\n- Purpose:\n- Section placement:\n\n#### Structural Description\n- Type (graph, layered system, pipeline, geometric, etc):\n- Dimensionality:\n- Formal object being depicted:\n- Core elements (nodes, edges, layers, arrows, regions, etc):\n\n#### Semantic Mapping\n- Nodes represent:\n- Edges represent:\n- Layers represent:\n- Colors represent:\n- Shapes represent:\n\n#### Layout Constraints\n- Global layout (left-to-right, top-to-bottom, radial, etc):\n- Relative positioning rules:\n- Alignment constraints:\n- Required nodes/edges/layers/regions:\n- Forbidden visual semantics:\n\n#### Mathematical Correspondence\n- Related equation/operator:\n- Mapping from math to visual:\n  - Symbol to visual element:\n  - Operator to transformation in figure:\n\n#### Rendering Instructions\n- Style (minimal, academic, annotated, didactic, structural only):\n- Label requirements:\n- Legend policy:\n- Tool preference (TikZ / matplotlib / external / UNKNOWN):\n- Level of detail:\n- Intended visual hierarchy:\n- What must be visually distinguished:\n- What must not be shown:\n- What can be deferred to the caption:\n\n#### Caption Requirements\n- Caption must explain:\n- Caption must NOT assume:\n- Caption may mention concepts not shown?:\n\n#### Audit Criteria\n- Release-quality criteria:\n- Minimum readability requirements:\n- What counts as too crowded:\n- Acceptable label density:\n- Must survive grayscale?:\n- Must read standalone?:\n- Blocker conditions:\n\nFigure strictness rule:\n- Figures must be derivable from the mathematical definitions.\n- No figure may introduce structure not present in the formalism.\n- If a figure simplifies reality, it must state the simplification explicitly.\n- A figure is not complete unless the intended visual hierarchy is specified.\n\n## 12.4 Visual standards\n- Color allowed?:\n- Grayscale-safe required?:\n- Colorblind-safe required?:\n- Preferred plotting/table style:\n- Caption style preference:\n- Notation summary table required?:\n- Symbol glossary required?:\n- Should visuals favor explanatory diagrams over data-heavy charts?:\n\n## 12.5 PDF style / typography targets\n- Style source files authorized for format only:\n- One-column or two-column preference:\n- Typography notes:\n- Title block style:\n- TOC preference:\n- Section heading style:\n- Theorem styling preference:\n- Notation-summary placement:\n- Figure caption tone:\n- Table style preference:\n- Hyperlink/color styling:\n- Margin density / whitespace preference:\n\n---\n\n# 13. LaTeX, Build, And Audit Requirements\n\n## 13.1 LaTeX project requirements\n- Manuscript must be LaTeX?:\n- Preferred document class:\n- Preferred compiler:\n- Preferred bibliography system:\n- Overleaf-compatible required?:\n- Local build required?:\n- Avoid shell-escape?:\n- Avoid external dependencies?:\n- One-column or two-column?:\n- Page or word limit:\n- Required packages:\n- Forbidden packages:\n- Single-file or multi-file LaTeX project?:\n- Preferred section file naming:\n- Separate macros file?:\n- Separate notation file?:\n- Separate appendix file?:\n- Separate theorem setup file?:\n- Separate package setup file?:\n\n## 13.2 Build environment assumptions\n- OS:\n- Expected TeX distribution:\n- Whether `latexmk` is required or optional:\n- Whether build scripts may patch PATH:\n- Whether strict-layout is required:\n- Whether PyMuPDF-based figure raster export is expected:\n- Whether Poppler `pdftotext` is expected:\n\n## 13.3 Theorem and cross-reference policy\n- Allowed theorem-like environments:\n- Disallowed theorem-like environments:\n- `cleveref` naming must be validated?:\n- Theorem-reference misnaming is a release blocker?:\n\n## 13.4 PDF convergence and audit requirements\n- Build log must be checked every compile-ready pass?:\n- Direct PDF reading required before release claims?:\n- Figure-page raster export required for figure passes?:\n- Placeholder/scaffold-language scan required?:\n- Overfull boxes block release?:\n- Which PDF issues are blockers:\n- Which PDF issues are warnings only:\n\n---\n\n# 14. Front Matter, Authorship, And Release Metadata\n\n## 14.1 Authorship metadata\n- Author list in order:\n- Affiliations:\n- Corresponding author:\n- Blind review handling:\n- Acknowledgments allowed in draft?:\n- Funding statement:\n- Conflict statement:\n- Ethics / safety statement:\n- Data / code availability statement:\n- Camera-ready only fields to omit for now:\n\n## 14.2 Release metadata\n- Date policy:\n- PDF author string:\n- PDF title string:\n- PDF keywords:\n- arXiv-ready abstract version:\n- Venue-neutral vs venue-specific release target:\n- README release pointers needed?:\n- Release notes needed?:\n\n---\n\n# 15. Explicit Unknowns And Stop Conditions\n\n- Unknown theorem statements:\n- Unknown proofs:\n- Unknown experiments:\n- Unknown baselines:\n- Unknown metrics:\n- Unknown citations:\n- Unknown venue requirements:\n- Unknown figures/tables:\n- Missing source materials:\n- Items that require human approval before drafting:\n- Items the agent should not block on:\n- Items that must block execution:\n\n---\n\n# 16. Agent Autonomy Preferences\n\n- The agent should start by:\n- The agent may create these folders/files without asking:\n- The agent should preserve these files verbatim:\n- The agent should prefer modularity vs speed:\n- The agent should optimize for:\n- The agent should avoid:\n- The ideal first-pass outcome is:\n- The ideal final outcome is:\n\n---\n\n# 17. Success Criteria\n\n## 17.1 Done-state ladder\n- Scaffold-complete requires:\n- Formal-core-complete requires:\n- Literature-grounded requires:\n- Build-verified requires:\n- Preprint-ready requires:\n- Release-ready requires:\n- Venue-submission-ready requires:\n\n## 17.2 Success criteria\n- Definition of a good first draft:\n- Definition of an excellent draft:\n- Top priorities:\n  1.\n  2.\n  3.\n- Main failure modes to avoid:\n- Likely reviewer attacks to preempt:\n- Strongest section(s) that must land well:\n\n---\n\n# 18. Fillable Quick-Start Appendix (Optional)\n\n## 18.1 Five-sentence project summary\n1.\n2.\n3.\n4.\n5.\n\n## 18.2 Five must-mention bullets\n- \n- \n- \n- \n- \n\n## 18.3 Five must-avoid bullets\n- \n- \n- \n- \n- \n\n## 18.4 Drop-in theorem/proposition notes\n- Note 1:\n- Note 2:\n- Note 3:\n\n## 18.5 Drop-in citation notes\n- Source 1:\n- Source 2:\n- Source 3:\n\n---\n\n# 19. Final Pre-Execution Checklist\n\n- [ ] Topic clearly defined\n- [ ] Canonical terminology locked\n- [ ] Paper mode selected\n- [ ] Prohibited content declared\n- [ ] Main contribution stated\n- [ ] Claims bounded\n- [ ] Non-claims explicit\n- [ ] Formal commitments locked\n- [ ] Mainline vs optional variants specified\n- [ ] Epistemic status policy specified\n- [ ] Structure specified\n- [ ] Citation policy specified\n- [ ] Related-work families specified\n- [ ] Figure specs and audit criteria specified\n- [ ] Build assumptions specified\n- [ ] Release metadata block filled\n- [ ] Done-state target selected\n- [ ] Freeze policy explicit\n- [ ] Unknowns explicitly marked\n- [ ] AI constraints explicit\n\n---\n\n# Final Control Instruction\n\nWhen this file is filled, the AI must be able to use it as the primary execution brief for the project.\n\nIf legacy helpers such as `templates/paper_structure_spec_master.md` or `docs/paper_structure_spec_filled.md` also exist, this file takes precedence unless the user explicitly says otherwise.\n\nIf this file leaves a detail unspecified, the agent may choose a reversible low-risk default for structure and formatting, but not for scientific claims, citations, proofs, results, authorship metadata, or figure semantics.\n",
+  "headings": [
+    {
+      "level": 1,
+      "title": "Research Project Spec - Autonomy-Oriented Master Template",
+      "raw_title": "Research Project Spec - Autonomy-Oriented Master Template",
+      "numbering": null,
+      "content": "This file is the single controlling brief for a research-paper project.\n\nIt is designed so an autonomous agent can, from one master file:\n- scaffold the repository,\n- draft or revise the manuscript,\n- preserve scope and non-claims,\n- distinguish mainline formalism from optional variants,\n- manage citations, figures, proofs, and release packaging,\n- and iterate on the compiled PDF until defined quality gates are met.\n\nIf a detail is not in this file or in explicitly authorized source materials, the agent must not invent it.\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "How To Use",
+      "raw_title": "How To Use",
+      "numbering": null,
+      "content": "1. Copy this template into a new project as `PROJECT_SPEC.md`.\n2. Fill every required field with either a real value, `UNKNOWN`, or `N/A`.\n3. Do not leave silent ambiguity.\n4. If a choice is intentionally deferred, mark that explicitly.\n5. Treat this file as the canonical source of truth for the paper.\n6. If legacy planning files exist, migrate anything still relevant into this file.\n\nRecommended launch message:\n\n`Read PROJECT_SPEC.md and execute this repository autonomously. Treat it as the controlling specification. Preserve all unknowns explicitly, do not fabricate citations, proofs, results, or experiments, and follow the PDF convergence loop until the declared done-state is reached or a blocker is explicit.`\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Global Rules",
+      "raw_title": "Global Rules",
+      "numbering": null,
+      "content": "- If evidence is missing, preserve the gap.\n- If citations are missing, do not fake them.\n- If proofs are missing, do not claim them complete.\n- If results are missing, do not imply they exist.\n- All manuscript prose must be reader-facing, not repo-facing.\n- Status markers belong in docs, not in reader-facing manuscript prose.\n- Appendix material is still reader-facing scholarship, not a storage dump.\n- If the main thesis is too unclear to draft responsibly, stop and ask for clarification.\n- If noncritical information is missing, continue with explicit placeholders.\n\nUse these unresolved markers in docs and planning artifacts:\n- `[BLOCKER: ...]`\n- `[NEEDS_CITATION: ...]`\n- `[NEEDS_PROOF: ...]`\n- `[NEEDS_RESULT: ...]`\n- `[OPTIONAL_LATER: ...]`\n- `[PLACEHOLDER: ...]`\n- `[UNVERIFIED: ...]`\n\nDo not leave repo-style markers in final manuscript prose unless transformed into proper scholarly language.\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Agent Execution Contract",
+      "raw_title": "Agent Execution Contract",
+      "numbering": null,
+      "content": "The agent must:\n- read this file first,\n- summarize the objective, scope, constraints, deliverables, and blockers,\n- extract the allowed pass taxonomy before editing,\n- create a file-by-file execution plan,\n- scaffold or revise the LaTeX project under `paper/`,\n- create or update:\n  - `docs/PROJECT_STATUS.md`\n  - `docs/BUILD_STATUS.md`\n  - `docs/PDF_REVIEW.md`\n  - `docs/MISSING_INPUTS.md`\n  - `docs/DECISIONS_LOG.md`\n  - `docs/FIGURE_AUDIT.md`\n- preserve all unknowns explicitly,\n- keep theorem/proof/result status honest,\n- run local audit/build scripts when available,\n- use rendered PDF inspection, including figure-page raster export, during convergence passes,\n- report changed files, remaining placeholders, blockers, and the next best action.\n\nThe agent must not:\n- invent citations,\n- invent theorem statements unless explicitly authorized,\n- invent proofs,\n- invent experiments,\n- invent quantitative results,\n- invent datasets or baselines,\n- invent submission facts,\n- invent author affiliations,\n- claim completion while critical placeholders remain,\n- perform opportunistic edits outside the current pass scope.\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Fill Strategy",
+      "raw_title": "0. Fill Strategy",
+      "numbering": "0",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Project mode",
+      "raw_title": "0.1 Project mode",
+      "numbering": "0.1",
+      "content": "- Project mode:\n  - scaffold only\n  - outline only\n  - draft from notes\n  - revise existing paper\n  - citation hardening\n  - theory formalization\n  - experiment write-up\n  - reviewer-defense pass\n  - release-readiness pass\n  - mixed mode"
+    },
+    {
+      "level": 2,
+      "title": "Desired draft level",
+      "raw_title": "0.2 Desired draft level",
+      "numbering": "0.2",
+      "content": "- Desired draft level:\n  - outline only\n  - structured draft\n  - polished draft\n  - preprint-ready\n  - submission-style draft"
+    },
+    {
+      "level": 2,
+      "title": "Allowed autonomy level",
+      "raw_title": "0.3 Allowed autonomy level",
+      "numbering": "0.3",
+      "content": "- Allowed autonomy level:\n  - high for structure, low for claims\n  - high for prose, low for math\n  - high for theory, low for citations\n  - high until explicit blocker\n  - custom:"
+    },
+    {
+      "level": 2,
+      "title": "Stop/continue rule",
+      "raw_title": "0.4 Stop/continue rule",
+      "numbering": "0.4",
+      "content": "- Continue with placeholders unless blocked?:\n- Items that must block execution:\n- Items that should never block execution:\n- Checkpoint cadence, if any:"
+    },
+    {
+      "level": 2,
+      "title": "Pass taxonomy",
+      "raw_title": "0.5 Pass taxonomy",
+      "numbering": "0.5",
+      "content": "- Allowed pass types:\n  - formalization pass\n  - theory-hardening pass\n  - style-convergence pass\n  - build-resolution pass\n  - citation pass\n  - figure-only pass\n  - proof-boundary pass\n  - metadata insertion pass\n  - release-readiness pass\n  - freeze confirmation pass\n- For each allowed pass, what it may change:\n- For each allowed pass, what it may not change:"
+    },
+    {
+      "level": 2,
+      "title": "Done-state target",
+      "raw_title": "0.6 Done-state target",
+      "numbering": "0.6",
+      "content": "- Target done-state:\n  - scaffold-complete\n  - formal-core-complete\n  - literature-grounded\n  - build-verified\n  - preprint-ready\n  - release-ready\n  - venue-submission-ready\n- Stop when target done-state is reached?:"
+    },
+    {
+      "level": 2,
+      "title": "Freeze policy",
+      "raw_title": "0.7 Freeze policy",
+      "numbering": "0.7",
+      "content": "- Freeze begins when:\n- After freeze, allowed changes:\n- After freeze, forbidden changes:\n- Figure-only fixes allowed after freeze?:\n- Metadata-only edits allowed after freeze?:\n- What counts as a release blocker after freeze:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Project Identity",
+      "raw_title": "1. Project Identity",
+      "numbering": "1",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Basic identity",
+      "raw_title": "1.1 Basic identity",
+      "numbering": "1.1",
+      "content": "- Final paper title:\n- Short title / running title:\n- Subtitle, if any:\n- Internal codename:\n- Preferred folder name:\n- Preferred LaTeX main file name:\n- Preferred bibliography file name:\n- Primary field:\n- Subfield:\n- Secondary fields:\n- Keywords:\n- Paper category:\n  - pure theory\n  - theory + method\n  - empirical\n  - systems\n  - hybrid\n- Current stage:\n- Target venue or outlet:\n- Blind review expected?:\n- arXiv intended?:\n- Journal extension expected?:"
+    },
+    {
+      "level": 2,
+      "title": "Canonical naming and terminology",
+      "raw_title": "1.2 Canonical naming and terminology",
+      "numbering": "1.2",
+      "content": "- Canonical object name:\n- Terms allowed in the paper:\n- Terms allowed only internally:\n- Deprecated names to avoid:\n- Search keywords that must not bleed into manuscript terminology:\n- Canonical names for:\n  - global state:\n  - session slice:\n  - external state or interface:\n  - open thought / provisional object:\n  - closed thought / accepted object:\n  - belief:\n  - closure operator:\n  - admissibility:\n  - merge:\n  - conflict policy:\n  - provenance policy:"
+    },
+    {
+      "level": 2,
+      "title": "Reader-facing identity constraints",
+      "raw_title": "1.3 Reader-facing identity constraints",
+      "numbering": "1.3",
+      "content": "- Terms or framings to avoid:\n- Informal metaphors allowed in manuscript?:\n- Informal metaphors allowed only internally?:\n- Internal codename may appear in manuscript?:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Core Objective, Scope, And Non-Claims",
+      "raw_title": "2. Core Objective, Scope, And Non-Claims",
+      "numbering": "2",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Core objective",
+      "raw_title": "2.1 Core objective",
+      "numbering": "2.1",
+      "content": "- Main objective:\n- Core research question:\n- Main thesis / key insight:\n- Why this matters:\n- Gap in the literature or practice:\n- Reader takeaway:\n- Primary contribution type:\n- Secondary contribution types:"
+    },
+    {
+      "level": 2,
+      "title": "Novelty framing",
+      "raw_title": "2.2 Novelty framing",
+      "numbering": "2.2",
+      "content": "- Absolute novelty claims forbidden?:\n- Preferred novelty language:\n  - synthesis\n  - formalization\n  - architecture\n  - decomposition\n  - reference framework\n  - custom:\n- Specific bounded novelty statement:\n- Novelty language to avoid:"
+    },
+    {
+      "level": 2,
+      "title": "Paper mode and prohibited content",
+      "raw_title": "2.3 Paper mode and prohibited content",
+      "numbering": "2.3",
+      "content": "- Explicitly prohibited sections:\n  - experiments\n  - results\n  - implementation\n  - ablations\n  - benchmarks\n  - case studies\n  - deployment\n  - user study\n  - other:\n- Allowed evidence types:\n  - definitions\n  - propositions\n  - theorems\n  - conjectures\n  - proofs\n  - proof sketches\n  - worked symbolic examples\n  - empirical results\n  - other:\n- Forbidden claim types:\n  - runtime claims\n  - benchmark claims\n  - implementation claims\n  - deployment claims\n  - broad generality claims beyond stated results\n  - other:"
+    },
+    {
+      "level": 2,
+      "title": "Non-claims",
+      "raw_title": "2.4 Non-claims",
+      "numbering": "2.4",
+      "content": "- This paper does not claim:\n- This paper does not compare:\n- This paper does not prove:\n- This paper does not implement:\n- This paper does not measure:\n- What must not be overclaimed:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Research Content Bank",
+      "raw_title": "3. Research Content Bank",
+      "numbering": "3",
+      "content": "This section is for the actual research content seeds the agent may use to shape the manuscript."
+    },
+    {
+      "level": 2,
+      "title": "Core concepts and topics",
+      "raw_title": "3.1 Core concepts and topics",
+      "numbering": "3.1",
+      "content": "- Core concepts that must appear:\n- Supporting concepts that should appear:\n- Optional concepts that may appear:\n- Concepts to exclude:\n- Terms that must be defined explicitly:\n- Terms that should not be used:"
+    },
+    {
+      "level": 2,
+      "title": "Content seeds / idea fragments",
+      "raw_title": "3.2 Content seeds / idea fragments",
+      "numbering": "3.2",
+      "content": "- Seed 1:\n- Seed 2:\n- Seed 3:\n- Seed 4:\n- Seed 5:"
+    },
+    {
+      "level": 2,
+      "title": "Canonical examples or motivating cases",
+      "raw_title": "3.3 Canonical examples or motivating cases",
+      "numbering": "3.3",
+      "content": "- Example 1:\n- Example 2:\n- Example 3:\n- Counterexample or failure case to mention:"
+    },
+    {
+      "level": 2,
+      "title": "Interpretation policy",
+      "raw_title": "3.4 Interpretation policy",
+      "numbering": "3.4",
+      "content": "- The agent may paraphrase seeds into prose?:\n- The agent may reorganize seeds?:\n- The agent may compress repetitive seeds?:\n- The agent must preserve any seed verbatim?:\n- Verbatim passages to preserve:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Source Materials And Priority",
+      "raw_title": "4. Source Materials And Priority",
+      "numbering": "4",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Priority order",
+      "raw_title": "4.1 Priority order",
+      "numbering": "4.1",
+      "content": "1. `PROJECT_SPEC.md`\n2. explicit user instructions\n3. `AGENTS.md` and `README.md`\n4. workflow documentation under `docs/`\n5. executable automation under `scripts/`\n6. active manuscript and build artifacts under `paper/` and `build/`\n7. legacy files only when explicitly promoted"
+    },
+    {
+      "level": 2,
+      "title": "Available materials",
+      "raw_title": "4.2 Available materials",
+      "numbering": "4.2",
+      "content": "- `PROJECT_SPEC.md`\n- `AGENTS.md`\n- `README.md`\n- `docs/FRONT_TO_END_WORKFLOW.md`\n- `docs/FILE_MAP.md`\n- `docs/REVIEW_RUBRIC.md`\n- `docs/SUBMISSION_CHECKLIST.md`\n- `docs/FIGURE_VISUAL_AUDIT.md`\n- `prompts/pdf_convergence_loop.md`\n- `prompts/figure_visual_audit_loop.md`\n- `scripts/build_paper.py`\n- `scripts/render_audit.py`\n- `scripts/pdf_quality_gate.py`\n- `scripts/spec_audit.py`\n- `scripts/run_autonomous_paper.py`\n- `scripts/export_figure_pages.py`\n- `scripts/figure_visual_audit.py`\n- `paper/main.tex`\n- `paper/tex/package_setup.tex`\n- `paper/tex/theorem_setup.tex`\n- `paper/bib/references.bib`"
+    },
+    {
+      "level": 2,
+      "title": "Source usage rules",
+      "raw_title": "4.3 Source usage rules",
+      "numbering": "4.3",
+      "content": "- Highest-authority source for scientific content: `PROJECT_SPEC.md`\n- Highest-authority source for style/formatting: `README.md`, `AGENTS.md`, and `docs/REVIEW_RUBRIC.md`\n- Highest-authority source for theorem statements: `PROJECT_SPEC.md`\n- Highest-authority source for active manuscript state: active files under `paper/`, then built PDF, then logs\n- Highest-authority source for citation metadata: `paper/bib/references.bib` plus explicitly authorized sources\n- Highest-authority source for figure semantics: detailed figure specs in this file\n- What the agent may use style-only, not content-wise:\n- What the agent must not use at all:"
+    },
+    {
+      "level": 2,
+      "title": "Source conflict policy",
+      "raw_title": "4.4 Source conflict policy",
+      "numbering": "4.4",
+      "content": "- If sources conflict, prioritize:\n  1. `PROJECT_SPEC.md`\n  2. active manuscript files\n  3. built PDF\n  4. build and audit logs\n  5. summary docs\n- Must log conflicts in `docs/DECISIONS_LOG.md`?:\n- Must stop on core scientific conflicts?:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Claim And Evidence Map",
+      "raw_title": "5. Claim And Evidence Map",
+      "numbering": "5",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Claim 1",
+      "raw_title": "Claim 1",
+      "numbering": null,
+      "content": "- Statement:\n- Strength:\n- Evidence available:\n- Citations required:\n- Proof required?:\n- Result required?:\n- Caveats:\n- What would weaken it:\n- Scope of validity:\n- Scope limits:"
+    },
+    {
+      "level": 2,
+      "title": "Claim 2",
+      "raw_title": "Claim 2",
+      "numbering": null,
+      "content": "- Statement:\n- Strength:\n- Evidence available:\n- Citations required:\n- Proof required?:\n- Result required?:\n- Caveats:\n- What would weaken it:\n- Scope of validity:\n- Scope limits:"
+    },
+    {
+      "level": 2,
+      "title": "Claim 3",
+      "raw_title": "Claim 3",
+      "numbering": null,
+      "content": "- Statement:\n- Strength:\n- Evidence available:\n- Citations required:\n- Proof required?:\n- Result required?:\n- Caveats:\n- What would weaken it:\n- Scope of validity:\n- Scope limits:"
+    },
+    {
+      "level": 2,
+      "title": "Claim guardrails",
+      "raw_title": "Claim guardrails",
+      "numbering": null,
+      "content": "- Claims to soften:\n- Claims that must not appear:\n- Claims requiring explicit caveats:\n- Known uncertainty boundaries:\n- Claims that are allowed only with proof:\n- Claims that are allowed only with citations:\n- Claims that are allowed only with results:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Literature, Related Work, And Citation Policy",
+      "raw_title": "6. Literature, Related Work, And Citation Policy",
+      "numbering": "6",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Citation and literature strategy",
+      "raw_title": "6.1 Citation and literature strategy",
+      "numbering": "6.1",
+      "content": "- Citation pass timing:\n  - first draft\n  - second pass\n  - late-stage only\n  - custom:\n- Must-cite families:\n- Forbidden citation sources:\n- Preprints allowed?:\n- Websites allowed?:\n- Style references may influence citation density?:\n- Novelty language policy before citations are verified:\n- Unsupported claims should be softened or left marked:"
+    },
+    {
+      "level": 2,
+      "title": "Related-work families",
+      "raw_title": "6.2 Related-work families",
+      "numbering": "6.2",
+      "content": "- Adjacent family 1:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Adjacent family 2:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Adjacent family 3:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Adjacent family 4:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Bounded novelty statement:\n- Non-claims relative to adjacent literature:"
+    },
+    {
+      "level": 2,
+      "title": "Citation quality policy",
+      "raw_title": "6.3 Citation quality policy",
+      "numbering": "6.3",
+      "content": "- Citation density target:\n- Minimum source quality:\n- Books allowed?:\n- Reports allowed?:\n- Must every non-obvious claim be cited?:\n- Must citations be verified before inclusion?:\n- The agent may add new verified citations beyond the listed ones?:\n- The agent must not add citations unless explicitly listed?:\n- The agent should mark uncited claims as `[NEEDS_CITATION]`?:"
+    },
+    {
+      "level": 2,
+      "title": "Citation formatting and reference behavior",
+      "raw_title": "6.4 Citation formatting and reference behavior",
+      "numbering": "6.4",
+      "content": "- Citation style preference:\n- In-text citation behavior:\n  - parenthetical only\n  - textual when natural\n  - mixed\n- Preferred reference granularity:\n  - one citation per paragraph when enough\n  - cite every claim cluster\n  - cite nearly every nontrivial claim\n- When multiple sources support one point, prefer:\n  - one strongest source\n  - two diverse sources\n  - foundational + recent pair\n- DOI preference:\n- URL policy:\n- arXiv formatting preference:\n- Author initials vs full names:\n- Conference/journal formatting preference:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Audience And Writing Style",
+      "raw_title": "7. Audience And Writing Style",
+      "numbering": "7",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Audience",
+      "raw_title": "7.1 Audience",
+      "numbering": "7.1",
+      "content": "- Primary audience:\n- Secondary audience:\n- Assumed background:\n- Concepts requiring gentle introduction:\n- Terms to define explicitly:"
+    },
+    {
+      "level": 2,
+      "title": "Style reference section",
+      "raw_title": "7.2 Style reference section",
+      "numbering": "7.2",
+      "content": "- Primary reference manuscript for style:\n- What may be imitated:\n  - section rhythm\n  - tone\n  - notation placement\n  - intro structure\n  - conclusion structure\n  - discussion style\n  - figure caption style\n  - theorem pacing\n  - custom:\n- What may not be copied:\n  - content\n  - claims\n  - citations\n  - formulas\n  - terminology unless authorized"
+    },
+    {
+      "level": 2,
+      "title": "Writing controls",
+      "raw_title": "7.3 Writing controls",
+      "numbering": "7.3",
+      "content": "- Preferred terminology:\n- Terms to avoid:\n- Tone:\n- Assertiveness level:\n- Paragraph density:\n- Jargon level:\n- Voice preference:\n- Sentence complexity preference:\n- Include intuition paragraphs?:\n- Include roadmap paragraphs?:\n- Include takeaway paragraphs?:\n- Include example-driven exposition?:\n- Reader-facing prose required?:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Section-by-Section Blueprint",
+      "raw_title": "8. Section-by-Section Blueprint",
+      "numbering": "8",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Required major sections",
+      "raw_title": "8.1 Required major sections",
+      "numbering": "8.1",
+      "content": "- [ ] Abstract\n- [ ] Introduction\n- [ ] Related Work\n- [ ] Background / Preliminaries\n- [ ] Problem Setup\n- [ ] Method / Theory\n- [ ] Algorithms\n- [ ] Experiments\n- [ ] Results\n- [ ] Discussion\n- [ ] Limitations\n- [ ] Broader Impact / Ethics\n- [ ] Conclusion\n- [ ] Appendix\n- [ ] Supplementary Material\n- [ ] Acknowledgments\n- [ ] Other:"
+    },
+    {
+      "level": 2,
+      "title": "Preferred section order",
+      "raw_title": "8.2 Preferred section order",
+      "numbering": "8.2",
+      "content": "1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n10."
+    },
+    {
+      "level": 2,
+      "title": "Section-by-section content plan",
+      "raw_title": "8.3 Section-by-section content plan",
+      "numbering": "8.3",
+      "content": ""
+    },
+    {
+      "level": 3,
+      "title": "Section 1",
+      "raw_title": "Section 1",
+      "numbering": null,
+      "content": "- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:"
+    },
+    {
+      "level": 3,
+      "title": "Section 2",
+      "raw_title": "Section 2",
+      "numbering": null,
+      "content": "- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:"
+    },
+    {
+      "level": 3,
+      "title": "Section 3",
+      "raw_title": "Section 3",
+      "numbering": null,
+      "content": "- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:"
+    },
+    {
+      "level": 3,
+      "title": "Section 4",
+      "raw_title": "Section 4",
+      "numbering": null,
+      "content": "- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:"
+    },
+    {
+      "level": 3,
+      "title": "Section 5",
+      "raw_title": "Section 5",
+      "numbering": null,
+      "content": "- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:"
+    },
+    {
+      "level": 2,
+      "title": "Epistemic status policy",
+      "raw_title": "8.4 Epistemic status policy",
+      "numbering": "8.4",
+      "content": "- What may appear as a definition:\n- What may appear as a proposition:\n- What may appear as a theorem:\n- What must remain a conjecture:\n- What must move to appendix:\n- What should be an open question:\n- Whether proof obligations may appear in main text:\n- Acceptable wording for unresolved results:"
+    },
+    {
+      "level": 2,
+      "title": "Abstract / intro / conclusion controls",
+      "raw_title": "8.5 Abstract / intro / conclusion controls",
+      "numbering": "8.5",
+      "content": "- Abstract must include:\n- Abstract must exclude:\n- Introduction must emphasize:\n- Introduction must not overclaim:\n- Conclusion must restate:\n- Conclusion must not imply:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Mathematical Content And Theory Control",
+      "raw_title": "9. Mathematical Content And Theory Control",
+      "numbering": "9",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Core mathematical objects",
+      "raw_title": "9.1 Core mathematical objects",
+      "numbering": "9.1",
+      "content": "- Core mathematical objects:\n- Sets:\n- Variables:\n- Functions:\n- Operators:\n- Relations:\n- Constraints:\n- Assumptions:\n- Boundary conditions:\n- Edge cases:"
+    },
+    {
+      "level": 2,
+      "title": "Formal commitments and variant lock",
+      "raw_title": "9.2 Formal commitments and variant lock",
+      "numbering": "9.2",
+      "content": "- Core mathematical object:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Layer semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Layer 0 policy:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Support-edge directionality:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Cross-layer dependency rule:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Conflict coexistence rule:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Admissibility regime:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Closure semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Merge semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Provenance semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Belief definition:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Recursive admissibility mainline or optional:\n- Higher-order topology core or future work:"
+    },
+    {
+      "level": 2,
+      "title": "Mainline vs optional variants",
+      "raw_title": "9.3 Mainline vs optional variants",
+      "numbering": "9.3",
+      "content": "- Variant 1:\n  - Mainline in paper?:\n  - Appendix only?:\n  - Future work only?:\n  - Reference policy?:\n  - Must be implemented in figures?:\n- Variant 2:\n  - Mainline in paper?:\n  - Appendix only?:\n  - Future work only?:\n  - Reference policy?:\n  - Must be implemented in figures?:"
+    },
+    {
+      "level": 2,
+      "title": "Formal statement policy",
+      "raw_title": "9.4 Formal statement policy",
+      "numbering": "9.4",
+      "content": "- Allowed environments:\n- Disallowed environments:\n- Maximum number of conjectures in main text:\n- When to use remark vs proposition:\n- Whether axioms are allowed:\n- Whether algorithm environments are allowed:"
+    },
+    {
+      "level": 2,
+      "title": "Definitions that must appear early",
+      "raw_title": "9.5 Definitions that must appear early",
+      "numbering": "9.5",
+      "content": "1.\n2.\n3.\n4.\n5."
+    },
+    {
+      "level": 2,
+      "title": "Mathematical equations and formulas inventory",
+      "raw_title": "9.6 Mathematical equations and formulas inventory",
+      "numbering": "9.6",
+      "content": "- Equation / formula 1:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:\n- Equation / formula 2:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:\n- Equation / formula 3:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:\n- Equation / formula 4:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:"
+    },
+    {
+      "level": 2,
+      "title": "Formal statement inventory",
+      "raw_title": "9.7 Formal statement inventory",
+      "numbering": "9.7",
+      "content": ""
+    },
+    {
+      "level": 3,
+      "title": "Statement 1",
+      "raw_title": "Statement 1",
+      "numbering": null,
+      "content": "- Type: proposition / lemma / theorem / corollary / definition / conjecture / remark / axiom\n- Draft statement:\n- Why it matters:\n- Proof status:\n- Required assumptions:\n- Section placement:"
+    },
+    {
+      "level": 3,
+      "title": "Statement 2",
+      "raw_title": "Statement 2",
+      "numbering": null,
+      "content": "- Type:\n- Draft statement:\n- Why it matters:\n- Proof status:\n- Required assumptions:\n- Section placement:"
+    },
+    {
+      "level": 3,
+      "title": "Statement 3",
+      "raw_title": "Statement 3",
+      "numbering": null,
+      "content": "- Type:\n- Draft statement:\n- Why it matters:\n- Proof status:\n- Required assumptions:\n- Section placement:"
+    },
+    {
+      "level": 3,
+      "title": "Statement 4",
+      "raw_title": "Statement 4",
+      "numbering": null,
+      "content": "- Type:\n- Draft statement:\n- Why it matters:\n- Proof status:\n- Required assumptions:\n- Section placement:"
+    },
+    {
+      "level": 2,
+      "title": "Proof policy",
+      "raw_title": "9.8 Proof policy",
+      "numbering": "9.8",
+      "content": "- Need theorems?:\n- Need lemmas?:\n- Need proofs?:\n- Need proof sketches in main text?:\n- Need full proofs in appendix?:\n- Proof rigor level:\n- The agent may draft proof skeletons when full proofs are missing?:\n- The agent must mark unresolved proof burdens as `[NEEDS_PROOF]`?:"
+    },
+    {
+      "level": 2,
+      "title": "Notation presentation",
+      "raw_title": "9.9 Notation presentation",
+      "numbering": "9.9",
+      "content": "- Notation summary required?:\n- Placement:\n  - after abstract\n  - in preliminaries\n  - appendix only\n  - custom:\n- Table vs prose list:\n- Whether notation should reappear later:\n- Whether local symbol reminders are expected:\n- Symbols already reserved:\n- Symbols to avoid:\n- Indexing conventions:\n- Bold vector preference:\n- Matrix notation preference:\n- Equation numbering preference:\n- Theorem numbering preference:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Method / System / Architecture Blueprint",
+      "raw_title": "10. Method / System / Architecture Blueprint",
+      "numbering": "10",
+      "content": "- Main method / system / theorem name:\n- Plain-English summary:\n- Technical summary:\n- Major components:\n- Inputs:\n- Outputs:\n- Pipeline or logical order:\n- Online mode description:\n- Offline mode description:\n- Multi-agent behavior:\n- Memory/state model:\n- Failure modes:\n- Safety considerations:\n- Need pseudocode?:\n- Need formal algorithms?:\n- Need architecture / system description?:\n- Need design rationale section?:\n- Need complexity analysis?:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Experiments, Results, And Evaluation",
+      "raw_title": "11. Experiments, Results, And Evaluation",
+      "numbering": "11",
+      "content": "- Evidence sources:\n- Datasets:\n- Baselines:\n- Metrics:\n- Statistical reporting requirements:\n- Hardware / software requirements:\n- Reproducibility constraints:\n- Main results to highlight:\n- Negative results to include:\n- Required ablations:\n- Required robustness checks:\n- Required error analysis:\n- Required limitations discussion:\n- Results that are not yet verified:"
+    },
+    {
+      "level": 2,
+      "title": "Evidence authorization by section",
+      "raw_title": "11.1 Evidence authorization by section",
+      "numbering": "11.1",
+      "content": "- Sections allowed to make empirical claims:\n- Sections allowed to make only conceptual claims:\n- Sections where `[NEEDS_RESULT]` must appear if evidence is missing:"
+    },
+    {
+      "level": 2,
+      "title": "A. Worked Example And Reference Policy Layer",
+      "raw_title": "11A. Worked Example And Reference Policy Layer",
+      "numbering": "11",
+      "content": "- If the framework is policy-parameterized, require a reference policy family?:\n- Reference policy family:\n- Why it was chosen:\n- What it is not claiming:\n- Conservative or permissive:\n- Pedagogical or normative:\n- Worked symbolic example required?:\n- Location:\n  - main text\n  - appendix\n- Worked example must include:\n  - at least one evidence node\n  - at least one open candidate\n  - session slice\n  - merge step or merge-ready condition\n  - closure\n  - belief vs closed distinction\n  - contradiction case yes/no\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Figures, Tables, And Visuals",
+      "raw_title": "12. Figures, Tables, And Visuals",
+      "numbering": "12",
+      "content": "All conceptual figure definitions belong in this file. Do not create separate conceptual figure-spec files."
+    },
+    {
+      "level": 2,
+      "title": "Figure plan",
+      "raw_title": "12.1 Figure plan",
+      "numbering": "12.1",
+      "content": ""
+    },
+    {
+      "level": 3,
+      "title": "Figure 1",
+      "raw_title": "Figure 1",
+      "numbering": null,
+      "content": "- Purpose:\n- Must show:\n- Section placement:\n- Data required:\n- Style notes:"
+    },
+    {
+      "level": 3,
+      "title": "Figure 2",
+      "raw_title": "Figure 2",
+      "numbering": null,
+      "content": "- Purpose:\n- Must show:\n- Section placement:\n- Data required:\n- Style notes:"
+    },
+    {
+      "level": 3,
+      "title": "Figure 3",
+      "raw_title": "Figure 3",
+      "numbering": null,
+      "content": "- Purpose:\n- Must show:\n- Section placement:\n- Data required:\n- Style notes:"
+    },
+    {
+      "level": 2,
+      "title": "Table plan",
+      "raw_title": "12.2 Table plan",
+      "numbering": "12.2",
+      "content": ""
+    },
+    {
+      "level": 3,
+      "title": "Table 1",
+      "raw_title": "Table 1",
+      "numbering": null,
+      "content": "- Purpose:\n- Required columns:\n- Required rows:\n- Section placement:\n- Data required:"
+    },
+    {
+      "level": 3,
+      "title": "Table 2",
+      "raw_title": "Table 2",
+      "numbering": null,
+      "content": "- Purpose:\n- Required columns:\n- Required rows:\n- Section placement:\n- Data required:"
+    },
+    {
+      "level": 2,
+      "title": "Figure specification layer (detailed)",
+      "raw_title": "12.3 Figure specification layer (detailed)",
+      "numbering": "12.3",
+      "content": ""
+    },
+    {
+      "level": 3,
+      "title": "Figure 1: `[PLACEHOLDER: short name]`",
+      "raw_title": "Figure 1: `[PLACEHOLDER: short name]`",
+      "numbering": null,
+      "content": "- Purpose:\n- Section placement:"
+    },
+    {
+      "level": 4,
+      "title": "Structural Description",
+      "raw_title": "Structural Description",
+      "numbering": null,
+      "content": "- Type (graph, layered system, pipeline, geometric, etc):\n- Dimensionality:\n- Formal object being depicted:\n- Core elements (nodes, edges, layers, arrows, regions, etc):"
+    },
+    {
+      "level": 4,
+      "title": "Semantic Mapping",
+      "raw_title": "Semantic Mapping",
+      "numbering": null,
+      "content": "- Nodes represent:\n- Edges represent:\n- Layers represent:\n- Colors represent:\n- Shapes represent:"
+    },
+    {
+      "level": 4,
+      "title": "Layout Constraints",
+      "raw_title": "Layout Constraints",
+      "numbering": null,
+      "content": "- Global layout (left-to-right, top-to-bottom, radial, etc):\n- Relative positioning rules:\n- Alignment constraints:\n- Required nodes/edges/layers/regions:\n- Forbidden visual semantics:"
+    },
+    {
+      "level": 4,
+      "title": "Mathematical Correspondence",
+      "raw_title": "Mathematical Correspondence",
+      "numbering": null,
+      "content": "- Related equation/operator:\n- Mapping from math to visual:\n  - Symbol to visual element:\n  - Operator to transformation in figure:"
+    },
+    {
+      "level": 4,
+      "title": "Rendering Instructions",
+      "raw_title": "Rendering Instructions",
+      "numbering": null,
+      "content": "- Style (minimal, academic, annotated, didactic, structural only):\n- Label requirements:\n- Legend policy:\n- Tool preference (TikZ / matplotlib / external / UNKNOWN):\n- Level of detail:\n- Intended visual hierarchy:\n- What must be visually distinguished:\n- What must not be shown:\n- What can be deferred to the caption:"
+    },
+    {
+      "level": 4,
+      "title": "Caption Requirements",
+      "raw_title": "Caption Requirements",
+      "numbering": null,
+      "content": "- Caption must explain:\n- Caption must NOT assume:\n- Caption may mention concepts not shown?:"
+    },
+    {
+      "level": 4,
+      "title": "Audit Criteria",
+      "raw_title": "Audit Criteria",
+      "numbering": null,
+      "content": "- Release-quality criteria:\n- Minimum readability requirements:\n- What counts as too crowded:\n- Acceptable label density:\n- Must survive grayscale?:\n- Must read standalone?:\n- Blocker conditions:"
+    },
+    {
+      "level": 3,
+      "title": "Figure 2: `[PLACEHOLDER: short name or delete this block]`",
+      "raw_title": "Figure 2: `[PLACEHOLDER: short name or delete this block]`",
+      "numbering": null,
+      "content": "- Purpose:\n- Section placement:"
+    },
+    {
+      "level": 4,
+      "title": "Structural Description",
+      "raw_title": "Structural Description",
+      "numbering": null,
+      "content": "- Type (graph, layered system, pipeline, geometric, etc):\n- Dimensionality:\n- Formal object being depicted:\n- Core elements (nodes, edges, layers, arrows, regions, etc):"
+    },
+    {
+      "level": 4,
+      "title": "Semantic Mapping",
+      "raw_title": "Semantic Mapping",
+      "numbering": null,
+      "content": "- Nodes represent:\n- Edges represent:\n- Layers represent:\n- Colors represent:\n- Shapes represent:"
+    },
+    {
+      "level": 4,
+      "title": "Layout Constraints",
+      "raw_title": "Layout Constraints",
+      "numbering": null,
+      "content": "- Global layout (left-to-right, top-to-bottom, radial, etc):\n- Relative positioning rules:\n- Alignment constraints:\n- Required nodes/edges/layers/regions:\n- Forbidden visual semantics:"
+    },
+    {
+      "level": 4,
+      "title": "Mathematical Correspondence",
+      "raw_title": "Mathematical Correspondence",
+      "numbering": null,
+      "content": "- Related equation/operator:\n- Mapping from math to visual:\n  - Symbol to visual element:\n  - Operator to transformation in figure:"
+    },
+    {
+      "level": 4,
+      "title": "Rendering Instructions",
+      "raw_title": "Rendering Instructions",
+      "numbering": null,
+      "content": "- Style (minimal, academic, annotated, didactic, structural only):\n- Label requirements:\n- Legend policy:\n- Tool preference (TikZ / matplotlib / external / UNKNOWN):\n- Level of detail:\n- Intended visual hierarchy:\n- What must be visually distinguished:\n- What must not be shown:\n- What can be deferred to the caption:"
+    },
+    {
+      "level": 4,
+      "title": "Caption Requirements",
+      "raw_title": "Caption Requirements",
+      "numbering": null,
+      "content": "- Caption must explain:\n- Caption must NOT assume:\n- Caption may mention concepts not shown?:"
+    },
+    {
+      "level": 4,
+      "title": "Audit Criteria",
+      "raw_title": "Audit Criteria",
+      "numbering": null,
+      "content": "- Release-quality criteria:\n- Minimum readability requirements:\n- What counts as too crowded:\n- Acceptable label density:\n- Must survive grayscale?:\n- Must read standalone?:\n- Blocker conditions:"
+    },
+    {
+      "level": 3,
+      "title": "Figure 3: `[PLACEHOLDER: short name or delete this block]`",
+      "raw_title": "Figure 3: `[PLACEHOLDER: short name or delete this block]`",
+      "numbering": null,
+      "content": "- Purpose:\n- Section placement:"
+    },
+    {
+      "level": 4,
+      "title": "Structural Description",
+      "raw_title": "Structural Description",
+      "numbering": null,
+      "content": "- Type (graph, layered system, pipeline, geometric, etc):\n- Dimensionality:\n- Formal object being depicted:\n- Core elements (nodes, edges, layers, arrows, regions, etc):"
+    },
+    {
+      "level": 4,
+      "title": "Semantic Mapping",
+      "raw_title": "Semantic Mapping",
+      "numbering": null,
+      "content": "- Nodes represent:\n- Edges represent:\n- Layers represent:\n- Colors represent:\n- Shapes represent:"
+    },
+    {
+      "level": 4,
+      "title": "Layout Constraints",
+      "raw_title": "Layout Constraints",
+      "numbering": null,
+      "content": "- Global layout (left-to-right, top-to-bottom, radial, etc):\n- Relative positioning rules:\n- Alignment constraints:\n- Required nodes/edges/layers/regions:\n- Forbidden visual semantics:"
+    },
+    {
+      "level": 4,
+      "title": "Mathematical Correspondence",
+      "raw_title": "Mathematical Correspondence",
+      "numbering": null,
+      "content": "- Related equation/operator:\n- Mapping from math to visual:\n  - Symbol to visual element:\n  - Operator to transformation in figure:"
+    },
+    {
+      "level": 4,
+      "title": "Rendering Instructions",
+      "raw_title": "Rendering Instructions",
+      "numbering": null,
+      "content": "- Style (minimal, academic, annotated, didactic, structural only):\n- Label requirements:\n- Legend policy:\n- Tool preference (TikZ / matplotlib / external / UNKNOWN):\n- Level of detail:\n- Intended visual hierarchy:\n- What must be visually distinguished:\n- What must not be shown:\n- What can be deferred to the caption:"
+    },
+    {
+      "level": 4,
+      "title": "Caption Requirements",
+      "raw_title": "Caption Requirements",
+      "numbering": null,
+      "content": "- Caption must explain:\n- Caption must NOT assume:\n- Caption may mention concepts not shown?:"
+    },
+    {
+      "level": 4,
+      "title": "Audit Criteria",
+      "raw_title": "Audit Criteria",
+      "numbering": null,
+      "content": "- Release-quality criteria:\n- Minimum readability requirements:\n- What counts as too crowded:\n- Acceptable label density:\n- Must survive grayscale?:\n- Must read standalone?:\n- Blocker conditions:\n\nFigure strictness rule:\n- Figures must be derivable from the mathematical definitions.\n- No figure may introduce structure not present in the formalism.\n- If a figure simplifies reality, it must state the simplification explicitly.\n- A figure is not complete unless the intended visual hierarchy is specified."
+    },
+    {
+      "level": 2,
+      "title": "Visual standards",
+      "raw_title": "12.4 Visual standards",
+      "numbering": "12.4",
+      "content": "- Color allowed?:\n- Grayscale-safe required?:\n- Colorblind-safe required?:\n- Preferred plotting/table style:\n- Caption style preference:\n- Notation summary table required?:\n- Symbol glossary required?:\n- Should visuals favor explanatory diagrams over data-heavy charts?:"
+    },
+    {
+      "level": 2,
+      "title": "PDF style / typography targets",
+      "raw_title": "12.5 PDF style / typography targets",
+      "numbering": "12.5",
+      "content": "- Style source files authorized for format only:\n- One-column or two-column preference:\n- Typography notes:\n- Title block style:\n- TOC preference:\n- Section heading style:\n- Theorem styling preference:\n- Notation-summary placement:\n- Figure caption tone:\n- Table style preference:\n- Hyperlink/color styling:\n- Margin density / whitespace preference:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "LaTeX, Build, And Audit Requirements",
+      "raw_title": "13. LaTeX, Build, And Audit Requirements",
+      "numbering": "13",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "LaTeX project requirements",
+      "raw_title": "13.1 LaTeX project requirements",
+      "numbering": "13.1",
+      "content": "- Manuscript must be LaTeX?:\n- Preferred document class:\n- Preferred compiler:\n- Preferred bibliography system:\n- Overleaf-compatible required?:\n- Local build required?:\n- Avoid shell-escape?:\n- Avoid external dependencies?:\n- One-column or two-column?:\n- Page or word limit:\n- Required packages:\n- Forbidden packages:\n- Single-file or multi-file LaTeX project?:\n- Preferred section file naming:\n- Separate macros file?:\n- Separate notation file?:\n- Separate appendix file?:\n- Separate theorem setup file?:\n- Separate package setup file?:"
+    },
+    {
+      "level": 2,
+      "title": "Build environment assumptions",
+      "raw_title": "13.2 Build environment assumptions",
+      "numbering": "13.2",
+      "content": "- OS:\n- Expected TeX distribution:\n- Whether `latexmk` is required or optional:\n- Whether build scripts may patch PATH:\n- Whether strict-layout is required:\n- Whether PyMuPDF-based figure raster export is expected:\n- Whether Poppler `pdftotext` is expected:"
+    },
+    {
+      "level": 2,
+      "title": "Theorem and cross-reference policy",
+      "raw_title": "13.3 Theorem and cross-reference policy",
+      "numbering": "13.3",
+      "content": "- Allowed theorem-like environments:\n- Disallowed theorem-like environments:\n- `cleveref` naming must be validated?:\n- Theorem-reference misnaming is a release blocker?:"
+    },
+    {
+      "level": 2,
+      "title": "PDF convergence and audit requirements",
+      "raw_title": "13.4 PDF convergence and audit requirements",
+      "numbering": "13.4",
+      "content": "- Build log must be checked every compile-ready pass?:\n- Direct PDF reading required before release claims?:\n- Figure-page raster export required for figure passes?:\n- Placeholder/scaffold-language scan required?:\n- Overfull boxes block release?:\n- Which PDF issues are blockers:\n- Which PDF issues are warnings only:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Front Matter, Authorship, And Release Metadata",
+      "raw_title": "14. Front Matter, Authorship, And Release Metadata",
+      "numbering": "14",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Authorship metadata",
+      "raw_title": "14.1 Authorship metadata",
+      "numbering": "14.1",
+      "content": "- Author list in order:\n- Affiliations:\n- Corresponding author:\n- Blind review handling:\n- Acknowledgments allowed in draft?:\n- Funding statement:\n- Conflict statement:\n- Ethics / safety statement:\n- Data / code availability statement:\n- Camera-ready only fields to omit for now:"
+    },
+    {
+      "level": 2,
+      "title": "Release metadata",
+      "raw_title": "14.2 Release metadata",
+      "numbering": "14.2",
+      "content": "- Date policy:\n- PDF author string:\n- PDF title string:\n- PDF keywords:\n- arXiv-ready abstract version:\n- Venue-neutral vs venue-specific release target:\n- README release pointers needed?:\n- Release notes needed?:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Explicit Unknowns And Stop Conditions",
+      "raw_title": "15. Explicit Unknowns And Stop Conditions",
+      "numbering": "15",
+      "content": "- Unknown theorem statements:\n- Unknown proofs:\n- Unknown experiments:\n- Unknown baselines:\n- Unknown metrics:\n- Unknown citations:\n- Unknown venue requirements:\n- Unknown figures/tables:\n- Missing source materials:\n- Items that require human approval before drafting:\n- Items the agent should not block on:\n- Items that must block execution:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Agent Autonomy Preferences",
+      "raw_title": "16. Agent Autonomy Preferences",
+      "numbering": "16",
+      "content": "- The agent should start by:\n- The agent may create these folders/files without asking:\n- The agent should preserve these files verbatim:\n- The agent should prefer modularity vs speed:\n- The agent should optimize for:\n- The agent should avoid:\n- The ideal first-pass outcome is:\n- The ideal final outcome is:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Success Criteria",
+      "raw_title": "17. Success Criteria",
+      "numbering": "17",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Done-state ladder",
+      "raw_title": "17.1 Done-state ladder",
+      "numbering": "17.1",
+      "content": "- Scaffold-complete requires:\n- Formal-core-complete requires:\n- Literature-grounded requires:\n- Build-verified requires:\n- Preprint-ready requires:\n- Release-ready requires:\n- Venue-submission-ready requires:"
+    },
+    {
+      "level": 2,
+      "title": "Success criteria",
+      "raw_title": "17.2 Success criteria",
+      "numbering": "17.2",
+      "content": "- Definition of a good first draft:\n- Definition of an excellent draft:\n- Top priorities:\n  1.\n  2.\n  3.\n- Main failure modes to avoid:\n- Likely reviewer attacks to preempt:\n- Strongest section(s) that must land well:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Fillable Quick-Start Appendix (Optional)",
+      "raw_title": "18. Fillable Quick-Start Appendix (Optional)",
+      "numbering": "18",
+      "content": ""
+    },
+    {
+      "level": 2,
+      "title": "Five-sentence project summary",
+      "raw_title": "18.1 Five-sentence project summary",
+      "numbering": "18.1",
+      "content": "1.\n2.\n3.\n4.\n5."
+    },
+    {
+      "level": 2,
+      "title": "Five must-mention bullets",
+      "raw_title": "18.2 Five must-mention bullets",
+      "numbering": "18.2",
+      "content": "-\n-\n-\n-\n-"
+    },
+    {
+      "level": 2,
+      "title": "Five must-avoid bullets",
+      "raw_title": "18.3 Five must-avoid bullets",
+      "numbering": "18.3",
+      "content": "-\n-\n-\n-\n-"
+    },
+    {
+      "level": 2,
+      "title": "Drop-in theorem/proposition notes",
+      "raw_title": "18.4 Drop-in theorem/proposition notes",
+      "numbering": "18.4",
+      "content": "- Note 1:\n- Note 2:\n- Note 3:"
+    },
+    {
+      "level": 2,
+      "title": "Drop-in citation notes",
+      "raw_title": "18.5 Drop-in citation notes",
+      "numbering": "18.5",
+      "content": "- Source 1:\n- Source 2:\n- Source 3:\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Final Pre-Execution Checklist",
+      "raw_title": "19. Final Pre-Execution Checklist",
+      "numbering": "19",
+      "content": "- [ ] Topic clearly defined\n- [ ] Canonical terminology locked\n- [ ] Paper mode selected\n- [ ] Prohibited content declared\n- [ ] Main contribution stated\n- [ ] Claims bounded\n- [ ] Non-claims explicit\n- [ ] Formal commitments locked\n- [ ] Mainline vs optional variants specified\n- [ ] Epistemic status policy specified\n- [ ] Structure specified\n- [ ] Citation policy specified\n- [ ] Related-work families specified\n- [ ] Figure specs and audit criteria specified\n- [ ] Build assumptions specified\n- [ ] Release metadata block filled\n- [ ] Done-state target selected\n- [ ] Freeze policy explicit\n- [ ] Unknowns explicitly marked\n- [ ] AI constraints explicit\n\n---"
+    },
+    {
+      "level": 1,
+      "title": "Final Control Instruction",
+      "raw_title": "Final Control Instruction",
+      "numbering": null,
+      "content": "When this file is filled, the AI must be able to use it as the primary execution brief for the project.\n\nIf legacy helpers such as `templates/paper_structure_spec_master.md` or `docs/paper_structure_spec_filled.md` also exist, this file takes precedence unless the user explicitly says otherwise.\n\nIf this file leaves a detail unspecified, the agent may choose a reversible low-risk default for structure and formatting, but not for scientific claims, citations, proofs, results, authorship metadata, or figure semantics."
+    }
+  ],
+  "numbered_sections": {
+    "0": "",
+    "0.1": "- Project mode:\n  - scaffold only\n  - outline only\n  - draft from notes\n  - revise existing paper\n  - citation hardening\n  - theory formalization\n  - experiment write-up\n  - reviewer-defense pass\n  - release-readiness pass\n  - mixed mode",
+    "0.2": "- Desired draft level:\n  - outline only\n  - structured draft\n  - polished draft\n  - preprint-ready\n  - submission-style draft",
+    "0.3": "- Allowed autonomy level:\n  - high for structure, low for claims\n  - high for prose, low for math\n  - high for theory, low for citations\n  - high until explicit blocker\n  - custom:",
+    "0.4": "- Continue with placeholders unless blocked?:\n- Items that must block execution:\n- Items that should never block execution:\n- Checkpoint cadence, if any:",
+    "0.5": "- Allowed pass types:\n  - formalization pass\n  - theory-hardening pass\n  - style-convergence pass\n  - build-resolution pass\n  - citation pass\n  - figure-only pass\n  - proof-boundary pass\n  - metadata insertion pass\n  - release-readiness pass\n  - freeze confirmation pass\n- For each allowed pass, what it may change:\n- For each allowed pass, what it may not change:",
+    "0.6": "- Target done-state:\n  - scaffold-complete\n  - formal-core-complete\n  - literature-grounded\n  - build-verified\n  - preprint-ready\n  - release-ready\n  - venue-submission-ready\n- Stop when target done-state is reached?:",
+    "0.7": "- Freeze begins when:\n- After freeze, allowed changes:\n- After freeze, forbidden changes:\n- Figure-only fixes allowed after freeze?:\n- Metadata-only edits allowed after freeze?:\n- What counts as a release blocker after freeze:\n\n---",
+    "1": "",
+    "1.1": "- Final paper title:\n- Short title / running title:\n- Subtitle, if any:\n- Internal codename:\n- Preferred folder name:\n- Preferred LaTeX main file name:\n- Preferred bibliography file name:\n- Primary field:\n- Subfield:\n- Secondary fields:\n- Keywords:\n- Paper category:\n  - pure theory\n  - theory + method\n  - empirical\n  - systems\n  - hybrid\n- Current stage:\n- Target venue or outlet:\n- Blind review expected?:\n- arXiv intended?:\n- Journal extension expected?:",
+    "1.2": "- Canonical object name:\n- Terms allowed in the paper:\n- Terms allowed only internally:\n- Deprecated names to avoid:\n- Search keywords that must not bleed into manuscript terminology:\n- Canonical names for:\n  - global state:\n  - session slice:\n  - external state or interface:\n  - open thought / provisional object:\n  - closed thought / accepted object:\n  - belief:\n  - closure operator:\n  - admissibility:\n  - merge:\n  - conflict policy:\n  - provenance policy:",
+    "1.3": "- Terms or framings to avoid:\n- Informal metaphors allowed in manuscript?:\n- Informal metaphors allowed only internally?:\n- Internal codename may appear in manuscript?:\n\n---",
+    "2": "",
+    "2.1": "- Main objective:\n- Core research question:\n- Main thesis / key insight:\n- Why this matters:\n- Gap in the literature or practice:\n- Reader takeaway:\n- Primary contribution type:\n- Secondary contribution types:",
+    "2.2": "- Absolute novelty claims forbidden?:\n- Preferred novelty language:\n  - synthesis\n  - formalization\n  - architecture\n  - decomposition\n  - reference framework\n  - custom:\n- Specific bounded novelty statement:\n- Novelty language to avoid:",
+    "2.3": "- Explicitly prohibited sections:\n  - experiments\n  - results\n  - implementation\n  - ablations\n  - benchmarks\n  - case studies\n  - deployment\n  - user study\n  - other:\n- Allowed evidence types:\n  - definitions\n  - propositions\n  - theorems\n  - conjectures\n  - proofs\n  - proof sketches\n  - worked symbolic examples\n  - empirical results\n  - other:\n- Forbidden claim types:\n  - runtime claims\n  - benchmark claims\n  - implementation claims\n  - deployment claims\n  - broad generality claims beyond stated results\n  - other:",
+    "2.4": "- This paper does not claim:\n- This paper does not compare:\n- This paper does not prove:\n- This paper does not implement:\n- This paper does not measure:\n- What must not be overclaimed:\n\n---",
+    "3": "This section is for the actual research content seeds the agent may use to shape the manuscript.",
+    "3.1": "- Core concepts that must appear:\n- Supporting concepts that should appear:\n- Optional concepts that may appear:\n- Concepts to exclude:\n- Terms that must be defined explicitly:\n- Terms that should not be used:",
+    "3.2": "- Seed 1:\n- Seed 2:\n- Seed 3:\n- Seed 4:\n- Seed 5:",
+    "3.3": "- Example 1:\n- Example 2:\n- Example 3:\n- Counterexample or failure case to mention:",
+    "3.4": "- The agent may paraphrase seeds into prose?:\n- The agent may reorganize seeds?:\n- The agent may compress repetitive seeds?:\n- The agent must preserve any seed verbatim?:\n- Verbatim passages to preserve:\n\n---",
+    "4": "",
+    "4.1": "1. `PROJECT_SPEC.md`\n2. explicit user instructions\n3. `AGENTS.md` and `README.md`\n4. workflow documentation under `docs/`\n5. executable automation under `scripts/`\n6. active manuscript and build artifacts under `paper/` and `build/`\n7. legacy files only when explicitly promoted",
+    "4.2": "- `PROJECT_SPEC.md`\n- `AGENTS.md`\n- `README.md`\n- `docs/FRONT_TO_END_WORKFLOW.md`\n- `docs/FILE_MAP.md`\n- `docs/REVIEW_RUBRIC.md`\n- `docs/SUBMISSION_CHECKLIST.md`\n- `docs/FIGURE_VISUAL_AUDIT.md`\n- `prompts/pdf_convergence_loop.md`\n- `prompts/figure_visual_audit_loop.md`\n- `scripts/build_paper.py`\n- `scripts/render_audit.py`\n- `scripts/pdf_quality_gate.py`\n- `scripts/spec_audit.py`\n- `scripts/run_autonomous_paper.py`\n- `scripts/export_figure_pages.py`\n- `scripts/figure_visual_audit.py`\n- `paper/main.tex`\n- `paper/tex/package_setup.tex`\n- `paper/tex/theorem_setup.tex`\n- `paper/bib/references.bib`",
+    "4.3": "- Highest-authority source for scientific content: `PROJECT_SPEC.md`\n- Highest-authority source for style/formatting: `README.md`, `AGENTS.md`, and `docs/REVIEW_RUBRIC.md`\n- Highest-authority source for theorem statements: `PROJECT_SPEC.md`\n- Highest-authority source for active manuscript state: active files under `paper/`, then built PDF, then logs\n- Highest-authority source for citation metadata: `paper/bib/references.bib` plus explicitly authorized sources\n- Highest-authority source for figure semantics: detailed figure specs in this file\n- What the agent may use style-only, not content-wise:\n- What the agent must not use at all:",
+    "4.4": "- If sources conflict, prioritize:\n  1. `PROJECT_SPEC.md`\n  2. active manuscript files\n  3. built PDF\n  4. build and audit logs\n  5. summary docs\n- Must log conflicts in `docs/DECISIONS_LOG.md`?:\n- Must stop on core scientific conflicts?:\n\n---",
+    "5": "",
+    "6": "",
+    "6.1": "- Citation pass timing:\n  - first draft\n  - second pass\n  - late-stage only\n  - custom:\n- Must-cite families:\n- Forbidden citation sources:\n- Preprints allowed?:\n- Websites allowed?:\n- Style references may influence citation density?:\n- Novelty language policy before citations are verified:\n- Unsupported claims should be softened or left marked:",
+    "6.2": "- Adjacent family 1:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Adjacent family 2:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Adjacent family 3:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Adjacent family 4:\n  - How this paper differs:\n  - What this paper does not claim relative to it:\n- Bounded novelty statement:\n- Non-claims relative to adjacent literature:",
+    "6.3": "- Citation density target:\n- Minimum source quality:\n- Books allowed?:\n- Reports allowed?:\n- Must every non-obvious claim be cited?:\n- Must citations be verified before inclusion?:\n- The agent may add new verified citations beyond the listed ones?:\n- The agent must not add citations unless explicitly listed?:\n- The agent should mark uncited claims as `[NEEDS_CITATION]`?:",
+    "6.4": "- Citation style preference:\n- In-text citation behavior:\n  - parenthetical only\n  - textual when natural\n  - mixed\n- Preferred reference granularity:\n  - one citation per paragraph when enough\n  - cite every claim cluster\n  - cite nearly every nontrivial claim\n- When multiple sources support one point, prefer:\n  - one strongest source\n  - two diverse sources\n  - foundational + recent pair\n- DOI preference:\n- URL policy:\n- arXiv formatting preference:\n- Author initials vs full names:\n- Conference/journal formatting preference:\n\n---",
+    "7": "",
+    "7.1": "- Primary audience:\n- Secondary audience:\n- Assumed background:\n- Concepts requiring gentle introduction:\n- Terms to define explicitly:",
+    "7.2": "- Primary reference manuscript for style:\n- What may be imitated:\n  - section rhythm\n  - tone\n  - notation placement\n  - intro structure\n  - conclusion structure\n  - discussion style\n  - figure caption style\n  - theorem pacing\n  - custom:\n- What may not be copied:\n  - content\n  - claims\n  - citations\n  - formulas\n  - terminology unless authorized",
+    "7.3": "- Preferred terminology:\n- Terms to avoid:\n- Tone:\n- Assertiveness level:\n- Paragraph density:\n- Jargon level:\n- Voice preference:\n- Sentence complexity preference:\n- Include intuition paragraphs?:\n- Include roadmap paragraphs?:\n- Include takeaway paragraphs?:\n- Include example-driven exposition?:\n- Reader-facing prose required?:\n\n---",
+    "8": "",
+    "8.1": "- [ ] Abstract\n- [ ] Introduction\n- [ ] Related Work\n- [ ] Background / Preliminaries\n- [ ] Problem Setup\n- [ ] Method / Theory\n- [ ] Algorithms\n- [ ] Experiments\n- [ ] Results\n- [ ] Discussion\n- [ ] Limitations\n- [ ] Broader Impact / Ethics\n- [ ] Conclusion\n- [ ] Appendix\n- [ ] Supplementary Material\n- [ ] Acknowledgments\n- [ ] Other:",
+    "8.2": "1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n10.",
+    "8.3": "",
+    "8.4": "- What may appear as a definition:\n- What may appear as a proposition:\n- What may appear as a theorem:\n- What must remain a conjecture:\n- What must move to appendix:\n- What should be an open question:\n- Whether proof obligations may appear in main text:\n- Acceptable wording for unresolved results:",
+    "8.5": "- Abstract must include:\n- Abstract must exclude:\n- Introduction must emphasize:\n- Introduction must not overclaim:\n- Conclusion must restate:\n- Conclusion must not imply:\n\n---",
+    "9": "",
+    "9.1": "- Core mathematical objects:\n- Sets:\n- Variables:\n- Functions:\n- Operators:\n- Relations:\n- Constraints:\n- Assumptions:\n- Boundary conditions:\n- Edge cases:",
+    "9.2": "- Core mathematical object:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Layer semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Layer 0 policy:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Support-edge directionality:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Cross-layer dependency rule:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Conflict coexistence rule:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Admissibility regime:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Closure semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Merge semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Provenance semantics:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Belief definition:\n  - Main choice:\n  - Rejected alternatives:\n  - Optional future variants:\n  - Main text / appendix / omit:\n- Recursive admissibility mainline or optional:\n- Higher-order topology core or future work:",
+    "9.3": "- Variant 1:\n  - Mainline in paper?:\n  - Appendix only?:\n  - Future work only?:\n  - Reference policy?:\n  - Must be implemented in figures?:\n- Variant 2:\n  - Mainline in paper?:\n  - Appendix only?:\n  - Future work only?:\n  - Reference policy?:\n  - Must be implemented in figures?:",
+    "9.4": "- Allowed environments:\n- Disallowed environments:\n- Maximum number of conjectures in main text:\n- When to use remark vs proposition:\n- Whether axioms are allowed:\n- Whether algorithm environments are allowed:",
+    "9.5": "1.\n2.\n3.\n4.\n5.",
+    "9.6": "- Equation / formula 1:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:\n- Equation / formula 2:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:\n- Equation / formula 3:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:\n- Equation / formula 4:\n  - Role in paper:\n  - Must be exact or can be provisional?:\n  - Section where it belongs:",
+    "9.7": "",
+    "9.8": "- Need theorems?:\n- Need lemmas?:\n- Need proofs?:\n- Need proof sketches in main text?:\n- Need full proofs in appendix?:\n- Proof rigor level:\n- The agent may draft proof skeletons when full proofs are missing?:\n- The agent must mark unresolved proof burdens as `[NEEDS_PROOF]`?:",
+    "9.9": "- Notation summary required?:\n- Placement:\n  - after abstract\n  - in preliminaries\n  - appendix only\n  - custom:\n- Table vs prose list:\n- Whether notation should reappear later:\n- Whether local symbol reminders are expected:\n- Symbols already reserved:\n- Symbols to avoid:\n- Indexing conventions:\n- Bold vector preference:\n- Matrix notation preference:\n- Equation numbering preference:\n- Theorem numbering preference:\n\n---",
+    "10": "- Main method / system / theorem name:\n- Plain-English summary:\n- Technical summary:\n- Major components:\n- Inputs:\n- Outputs:\n- Pipeline or logical order:\n- Online mode description:\n- Offline mode description:\n- Multi-agent behavior:\n- Memory/state model:\n- Failure modes:\n- Safety considerations:\n- Need pseudocode?:\n- Need formal algorithms?:\n- Need architecture / system description?:\n- Need design rationale section?:\n- Need complexity analysis?:\n\n---",
+    "11": "- If the framework is policy-parameterized, require a reference policy family?:\n- Reference policy family:\n- Why it was chosen:\n- What it is not claiming:\n- Conservative or permissive:\n- Pedagogical or normative:\n- Worked symbolic example required?:\n- Location:\n  - main text\n  - appendix\n- Worked example must include:\n  - at least one evidence node\n  - at least one open candidate\n  - session slice\n  - merge step or merge-ready condition\n  - closure\n  - belief vs closed distinction\n  - contradiction case yes/no\n\n---",
+    "11.1": "- Sections allowed to make empirical claims:\n- Sections allowed to make only conceptual claims:\n- Sections where `[NEEDS_RESULT]` must appear if evidence is missing:",
+    "12": "All conceptual figure definitions belong in this file. Do not create separate conceptual figure-spec files.",
+    "12.1": "",
+    "12.2": "",
+    "12.3": "",
+    "12.4": "- Color allowed?:\n- Grayscale-safe required?:\n- Colorblind-safe required?:\n- Preferred plotting/table style:\n- Caption style preference:\n- Notation summary table required?:\n- Symbol glossary required?:\n- Should visuals favor explanatory diagrams over data-heavy charts?:",
+    "12.5": "- Style source files authorized for format only:\n- One-column or two-column preference:\n- Typography notes:\n- Title block style:\n- TOC preference:\n- Section heading style:\n- Theorem styling preference:\n- Notation-summary placement:\n- Figure caption tone:\n- Table style preference:\n- Hyperlink/color styling:\n- Margin density / whitespace preference:\n\n---",
+    "13": "",
+    "13.1": "- Manuscript must be LaTeX?:\n- Preferred document class:\n- Preferred compiler:\n- Preferred bibliography system:\n- Overleaf-compatible required?:\n- Local build required?:\n- Avoid shell-escape?:\n- Avoid external dependencies?:\n- One-column or two-column?:\n- Page or word limit:\n- Required packages:\n- Forbidden packages:\n- Single-file or multi-file LaTeX project?:\n- Preferred section file naming:\n- Separate macros file?:\n- Separate notation file?:\n- Separate appendix file?:\n- Separate theorem setup file?:\n- Separate package setup file?:",
+    "13.2": "- OS:\n- Expected TeX distribution:\n- Whether `latexmk` is required or optional:\n- Whether build scripts may patch PATH:\n- Whether strict-layout is required:\n- Whether PyMuPDF-based figure raster export is expected:\n- Whether Poppler `pdftotext` is expected:",
+    "13.3": "- Allowed theorem-like environments:\n- Disallowed theorem-like environments:\n- `cleveref` naming must be validated?:\n- Theorem-reference misnaming is a release blocker?:",
+    "13.4": "- Build log must be checked every compile-ready pass?:\n- Direct PDF reading required before release claims?:\n- Figure-page raster export required for figure passes?:\n- Placeholder/scaffold-language scan required?:\n- Overfull boxes block release?:\n- Which PDF issues are blockers:\n- Which PDF issues are warnings only:\n\n---",
+    "14": "",
+    "14.1": "- Author list in order:\n- Affiliations:\n- Corresponding author:\n- Blind review handling:\n- Acknowledgments allowed in draft?:\n- Funding statement:\n- Conflict statement:\n- Ethics / safety statement:\n- Data / code availability statement:\n- Camera-ready only fields to omit for now:",
+    "14.2": "- Date policy:\n- PDF author string:\n- PDF title string:\n- PDF keywords:\n- arXiv-ready abstract version:\n- Venue-neutral vs venue-specific release target:\n- README release pointers needed?:\n- Release notes needed?:\n\n---",
+    "15": "- Unknown theorem statements:\n- Unknown proofs:\n- Unknown experiments:\n- Unknown baselines:\n- Unknown metrics:\n- Unknown citations:\n- Unknown venue requirements:\n- Unknown figures/tables:\n- Missing source materials:\n- Items that require human approval before drafting:\n- Items the agent should not block on:\n- Items that must block execution:\n\n---",
+    "16": "- The agent should start by:\n- The agent may create these folders/files without asking:\n- The agent should preserve these files verbatim:\n- The agent should prefer modularity vs speed:\n- The agent should optimize for:\n- The agent should avoid:\n- The ideal first-pass outcome is:\n- The ideal final outcome is:\n\n---",
+    "17": "",
+    "17.1": "- Scaffold-complete requires:\n- Formal-core-complete requires:\n- Literature-grounded requires:\n- Build-verified requires:\n- Preprint-ready requires:\n- Release-ready requires:\n- Venue-submission-ready requires:",
+    "17.2": "- Definition of a good first draft:\n- Definition of an excellent draft:\n- Top priorities:\n  1.\n  2.\n  3.\n- Main failure modes to avoid:\n- Likely reviewer attacks to preempt:\n- Strongest section(s) that must land well:\n\n---",
+    "18": "",
+    "18.1": "1.\n2.\n3.\n4.\n5.",
+    "18.2": "-\n-\n-\n-\n-",
+    "18.3": "-\n-\n-\n-\n-",
+    "18.4": "- Note 1:\n- Note 2:\n- Note 3:",
+    "18.5": "- Source 1:\n- Source 2:\n- Source 3:\n\n---",
+    "19": "- [ ] Topic clearly defined\n- [ ] Canonical terminology locked\n- [ ] Paper mode selected\n- [ ] Prohibited content declared\n- [ ] Main contribution stated\n- [ ] Claims bounded\n- [ ] Non-claims explicit\n- [ ] Formal commitments locked\n- [ ] Mainline vs optional variants specified\n- [ ] Epistemic status policy specified\n- [ ] Structure specified\n- [ ] Citation policy specified\n- [ ] Related-work families specified\n- [ ] Figure specs and audit criteria specified\n- [ ] Build assumptions specified\n- [ ] Release metadata block filled\n- [ ] Done-state target selected\n- [ ] Freeze policy explicit\n- [ ] Unknowns explicitly marked\n- [ ] AI constraints explicit\n\n---"
+  },
+  "project_mode": "- Project mode:\n  - scaffold only\n  - outline only\n  - draft from notes\n  - revise existing paper\n  - citation hardening\n  - theory formalization\n  - experiment write-up\n  - reviewer-defense pass\n  - release-readiness pass\n  - mixed mode",
+  "draft_level": "- Desired draft level:\n  - outline only\n  - structured draft\n  - polished draft\n  - preprint-ready\n  - submission-style draft",
+  "autonomy_level": "- Allowed autonomy level:\n  - high for structure, low for claims\n  - high for prose, low for math\n  - high for theory, low for citations\n  - high until explicit blocker\n  - custom:",
+  "stop_continue_rule": "- Continue with placeholders unless blocked?:\n- Items that must block execution:\n- Items that should never block execution:\n- Checkpoint cadence, if any:",
+  "project_identity": "",
+  "core_objective": "",
+  "audience_style": "",
+  "source_materials": [
+    {
+      "id": "source-1",
+      "label": "PROJECT_SPEC",
+      "raw_reference": "PROJECT_SPEC.md",
+      "source_type": "text",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\PROJECT_SPEC.md",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-2",
+      "label": "AGENTS",
+      "raw_reference": "AGENTS.md",
+      "source_type": "text",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\AGENTS.md",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-3",
+      "label": "README",
+      "raw_reference": "README.md",
+      "source_type": "text",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\README.md",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-4",
+      "label": "FRONT_TO_END_WORKFLOW",
+      "raw_reference": "docs/FRONT_TO_END_WORKFLOW.md",
+      "source_type": "text",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\docs\\FRONT_TO_END_WORKFLOW.md",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-5",
+      "label": "FILE_MAP",
+      "raw_reference": "docs/FILE_MAP.md",
+      "source_type": "text",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\docs\\FILE_MAP.md",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-6",
+      "label": "REVIEW_RUBRIC",
+      "raw_reference": "docs/REVIEW_RUBRIC.md",
+      "source_type": "text",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\docs\\REVIEW_RUBRIC.md",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-7",
+      "label": "SUBMISSION_CHECKLIST",
+      "raw_reference": "docs/SUBMISSION_CHECKLIST.md",
+      "source_type": "text",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\docs\\SUBMISSION_CHECKLIST.md",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-8",
+      "label": "FIGURE_VISUAL_AUDIT",
+      "raw_reference": "docs/FIGURE_VISUAL_AUDIT.md",
+      "source_type": "text",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\docs\\FIGURE_VISUAL_AUDIT.md",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-9",
+      "label": "pdf_convergence_loop",
+      "raw_reference": "prompts/pdf_convergence_loop.md",
+      "source_type": "text",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\prompts\\pdf_convergence_loop.md",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-10",
+      "label": "figure_visual_audit_loop",
+      "raw_reference": "prompts/figure_visual_audit_loop.md",
+      "source_type": "text",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\prompts\\figure_visual_audit_loop.md",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-11",
+      "label": "main",
+      "raw_reference": "paper/main.tex",
+      "source_type": "file",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\paper\\main.tex",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-12",
+      "label": "package_setup",
+      "raw_reference": "paper/tex/package_setup.tex",
+      "source_type": "file",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\paper\\tex\\package_setup.tex",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-13",
+      "label": "theorem_setup",
+      "raw_reference": "paper/tex/theorem_setup.tex",
+      "source_type": "file",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\paper\\tex\\theorem_setup.tex",
+      "url": null,
+      "priority": null,
+      "notes": []
+    },
+    {
+      "id": "source-14",
+      "label": "references",
+      "raw_reference": "paper/bib/references.bib",
+      "source_type": "bibliography",
+      "exists": true,
+      "path": "C:\\Users\\Mason\\mind-map\\@Personal\\Resources\\Templates\\research_paper_template_v1\\paper\\bib\\references.bib",
+      "url": null,
+      "priority": null,
+      "notes": []
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-1",
+      "title": "Claim 1",
+      "body": "- Statement:\n- Strength:\n- Evidence available:\n- Citations required:\n- Proof required?:\n- Result required?:\n- Caveats:\n- What would weaken it:\n- Scope of validity:\n- Scope limits:",
+      "evidence_hints": [
+        "Evidence available:",
+        "Citations required:",
+        "Result required?:"
+      ]
+    },
+    {
+      "id": "claim-2",
+      "title": "Claim 2",
+      "body": "- Statement:\n- Strength:\n- Evidence available:\n- Citations required:\n- Proof required?:\n- Result required?:\n- Caveats:\n- What would weaken it:\n- Scope of validity:\n- Scope limits:",
+      "evidence_hints": [
+        "Evidence available:",
+        "Citations required:",
+        "Result required?:"
+      ]
+    },
+    {
+      "id": "claim-3",
+      "title": "Claim 3",
+      "body": "- Statement:\n- Strength:\n- Evidence available:\n- Citations required:\n- Proof required?:\n- Result required?:\n- Caveats:\n- What would weaken it:\n- Scope of validity:\n- Scope limits:",
+      "evidence_hints": [
+        "Evidence available:",
+        "Citations required:",
+        "Result required?:"
+      ]
+    }
+  ],
+  "blueprint_sections": [
+    {
+      "id": "section-plan-1",
+      "title": "Section 1",
+      "body": "- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:",
+      "required": true,
+      "mapped_output": null,
+      "claim_ids": []
+    },
+    {
+      "id": "section-plan-2",
+      "title": "Section 2",
+      "body": "- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:",
+      "required": true,
+      "mapped_output": null,
+      "claim_ids": []
+    },
+    {
+      "id": "section-plan-3",
+      "title": "Section 3",
+      "body": "- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:",
+      "required": true,
+      "mapped_output": null,
+      "claim_ids": []
+    },
+    {
+      "id": "section-plan-4",
+      "title": "Section 4",
+      "body": "- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:",
+      "required": true,
+      "mapped_output": null,
+      "claim_ids": []
+    },
+    {
+      "id": "section-plan-5",
+      "title": "Section 5",
+      "body": "- Section name:\n- Purpose:\n- Must include:\n- Must not include:\n- Inputs or notes to use:\n- Claims allowed here:\n- Citations expected here:\n- Tone or pacing notes:\n- Ideal ending of the section:",
+      "required": true,
+      "mapped_output": null,
+      "claim_ids": []
+    }
+  ],
+  "figures": [
+    {
+      "id": "figure-1",
+      "title": "Figure 1",
+      "summary": "- Purpose:\n- Must show:\n- Section placement:\n- Data required:\n- Style notes:",
+      "detailed_fields": {
+        "Structural Description": "- Type (graph, layered system, pipeline, geometric, etc):\n- Dimensionality:\n- Formal object being depicted:\n- Core elements (nodes, edges, layers, arrows, regions, etc):",
+        "Semantic Mapping": "- Nodes represent:\n- Edges represent:\n- Layers represent:\n- Colors represent:\n- Shapes represent:",
+        "Layout Constraints": "- Global layout (left-to-right, top-to-bottom, radial, etc):\n- Relative positioning rules:\n- Alignment constraints:\n- Required nodes/edges/layers/regions:\n- Forbidden visual semantics:",
+        "Mathematical Correspondence": "- Related equation/operator:\n- Mapping from math to visual:\n  - Symbol to visual element:\n  - Operator to transformation in figure:",
+        "Rendering Instructions": "- Style (minimal, academic, annotated, didactic, structural only):\n- Label requirements:\n- Legend policy:\n- Tool preference (TikZ / matplotlib / external / UNKNOWN):\n- Level of detail:\n- Intended visual hierarchy:\n- What must be visually distinguished:\n- What must not be shown:\n- What can be deferred to the caption:",
+        "Caption Requirements": "- Caption must explain:\n- Caption must NOT assume:\n- Caption may mention concepts not shown?:",
+        "Audit Criteria": "- Release-quality criteria:\n- Minimum readability requirements:\n- What counts as too crowded:\n- Acceptable label density:\n- Must survive grayscale?:\n- Must read standalone?:\n- Blocker conditions:"
+      }
+    },
+    {
+      "id": "figure-2",
+      "title": "Figure 2",
+      "summary": "- Purpose:\n- Must show:\n- Section placement:\n- Data required:\n- Style notes:",
+      "detailed_fields": {
+        "Structural Description": "- Type (graph, layered system, pipeline, geometric, etc):\n- Dimensionality:\n- Formal object being depicted:\n- Core elements (nodes, edges, layers, arrows, regions, etc):",
+        "Semantic Mapping": "- Nodes represent:\n- Edges represent:\n- Layers represent:\n- Colors represent:\n- Shapes represent:",
+        "Layout Constraints": "- Global layout (left-to-right, top-to-bottom, radial, etc):\n- Relative positioning rules:\n- Alignment constraints:\n- Required nodes/edges/layers/regions:\n- Forbidden visual semantics:",
+        "Mathematical Correspondence": "- Related equation/operator:\n- Mapping from math to visual:\n  - Symbol to visual element:\n  - Operator to transformation in figure:",
+        "Rendering Instructions": "- Style (minimal, academic, annotated, didactic, structural only):\n- Label requirements:\n- Legend policy:\n- Tool preference (TikZ / matplotlib / external / UNKNOWN):\n- Level of detail:\n- Intended visual hierarchy:\n- What must be visually distinguished:\n- What must not be shown:\n- What can be deferred to the caption:",
+        "Caption Requirements": "- Caption must explain:\n- Caption must NOT assume:\n- Caption may mention concepts not shown?:",
+        "Audit Criteria": "- Release-quality criteria:\n- Minimum readability requirements:\n- What counts as too crowded:\n- Acceptable label density:\n- Must survive grayscale?:\n- Must read standalone?:\n- Blocker conditions:"
+      }
+    },
+    {
+      "id": "figure-3",
+      "title": "Figure 3",
+      "summary": "- Purpose:\n- Must show:\n- Section placement:\n- Data required:\n- Style notes:",
+      "detailed_fields": {
+        "Structural Description": "- Type (graph, layered system, pipeline, geometric, etc):\n- Dimensionality:\n- Formal object being depicted:\n- Core elements (nodes, edges, layers, arrows, regions, etc):",
+        "Semantic Mapping": "- Nodes represent:\n- Edges represent:\n- Layers represent:\n- Colors represent:\n- Shapes represent:",
+        "Layout Constraints": "- Global layout (left-to-right, top-to-bottom, radial, etc):\n- Relative positioning rules:\n- Alignment constraints:\n- Required nodes/edges/layers/regions:\n- Forbidden visual semantics:",
+        "Mathematical Correspondence": "- Related equation/operator:\n- Mapping from math to visual:\n  - Symbol to visual element:\n  - Operator to transformation in figure:",
+        "Rendering Instructions": "- Style (minimal, academic, annotated, didactic, structural only):\n- Label requirements:\n- Legend policy:\n- Tool preference (TikZ / matplotlib / external / UNKNOWN):\n- Level of detail:\n- Intended visual hierarchy:\n- What must be visually distinguished:\n- What must not be shown:\n- What can be deferred to the caption:",
+        "Caption Requirements": "- Caption must explain:\n- Caption must NOT assume:\n- Caption may mention concepts not shown?:",
+        "Audit Criteria": "- Release-quality criteria:\n- Minimum readability requirements:\n- What counts as too crowded:\n- Acceptable label density:\n- Must survive grayscale?:\n- Must read standalone?:\n- Blocker conditions:\n\nFigure strictness rule:\n- Figures must be derivable from the mathematical definitions.\n- No figure may introduce structure not present in the formalism.\n- If a figure simplifies reality, it must state the simplification explicitly.\n- A figure is not complete unless the intended visual hierarchy is specified."
+      }
+    }
+  ],
+  "tables": [
+    {
+      "id": "table-1",
+      "title": "Table 1",
+      "summary": "- Purpose:\n- Required columns:\n- Required rows:\n- Section placement:\n- Data required:"
+    },
+    {
+      "id": "table-2",
+      "title": "Table 2",
+      "summary": "- Purpose:\n- Required columns:\n- Required rows:\n- Section placement:\n- Data required:"
+    }
+  ],
+  "success_criteria": []
+}

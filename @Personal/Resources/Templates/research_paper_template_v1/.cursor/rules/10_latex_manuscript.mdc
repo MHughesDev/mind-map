@@ -1,0 +1,43 @@
+---
+description: LaTeX manuscript conventions for this repository
+globs: ["paper/**/*.tex", "paper/**/*.bib", "paper/**/*.sty", "paper/**/*.cls"]
+---
+
+Use clean, modular LaTeX.
+
+Prefer:
+- one main entry file,
+- separate section files,
+- separate bibliography file,
+- separate macros/theorem setup files,
+- a separate notation file when notation grows,
+- explicit labels for figures/tables/equations/theorems.
+
+Do not:
+- add unnecessary packages,
+- create dangling references silently,
+- claim bibliography completeness if stub citations remain,
+- leave hidden build assumptions undocumented.
+
+Once the manuscript is compile-ready:
+- build `paper/main.pdf`,
+- inspect `paper/main.pdf` directly,
+- log build findings in `docs/BUILD_STATUS.md`,
+- log rendered-output issues in `docs/PDF_REVIEW.md`,
+- fix obvious layout problems before calling the draft ready.
+
+Unknown content must be marked with:
+- [PLACEHOLDER: ...]
+- % TODO: ...
+
+If the manuscript is theoretical:
+- define notation before use,
+- separate definitions from claims,
+- do not label a result as proved if the proof is absent.
+
+If `PROJECT_SPEC.md` requests optional sections such as algorithms, broader impact, acknowledgments, or supplementary material, scaffold them intentionally and keep inclusion in `paper/main.tex` explicit.
+
+When handling figures:
+- derive captions and placement from `PROJECT_SPEC.md`,
+- do not invent figure structure outside the detailed figure-spec layer,
+- leave placeholders rather than guessing missing figure semantics.

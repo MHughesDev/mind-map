@@ -1,0 +1,30 @@
+[
+  {
+    "severity": "error",
+    "code": "missing-section",
+    "message": "Required spec section `11A` is missing.",
+    "location": "PROJECT_SPEC.md::11A",
+    "recommendation": "Add the missing section before autonomous execution."
+  },
+  {
+    "severity": "error",
+    "code": "objective-missing",
+    "message": "Spec section `2` is incomplete or still placeholder-heavy.",
+    "location": "PROJECT_SPEC.md::2",
+    "recommendation": "State the core objective and thesis."
+  },
+  {
+    "severity": "error",
+    "code": "success-missing",
+    "message": "Spec section `17` is incomplete or still placeholder-heavy.",
+    "location": "PROJECT_SPEC.md::17",
+    "recommendation": "Add measurable success criteria."
+  },
+  {
+    "severity": "error",
+    "code": "reference-policy-missing",
+    "message": "Spec section `11A` is incomplete or still placeholder-heavy.",
+    "location": "PROJECT_SPEC.md::11A",
+    "recommendation": "Require a reference policy family and worked example when the framework is policy-parameterized."
+  }
+]
