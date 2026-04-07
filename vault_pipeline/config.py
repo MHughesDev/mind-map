@@ -31,7 +31,13 @@ class VaultConfig:
     extensions: set[str] = field(default_factory=lambda: set(DEFAULT_TEXT_EXTENSIONS))
 
     def normalize(self) -> "VaultConfig":
-        normalized_exts = {ext if ext.startswith(".") else f".{ext}" for ext in self.extensions}
+        normalized_exts: set[str] = set()
+        for ext in self.extensions:
+            cleaned = ext.strip()
+            if cleaned == "*":
+                normalized_exts.add("*")
+                continue
+            normalized_exts.add(cleaned if cleaned.startswith(".") else f".{cleaned}")
         return VaultConfig(
             root_dir=self.root_dir.resolve(),
             db_dir=self.db_dir.resolve(),
@@ -48,7 +54,7 @@ class VaultConfig:
             return False
         if not self.include_hidden and any(part.startswith(".") for part in path.parts):
             return False
-        if path.suffix.lower() not in self.extensions:
+        if "*" not in self.extensions and path.suffix.lower() not in self.extensions:
             return False
         try:
             return path.stat().st_size <= self.max_file_bytes

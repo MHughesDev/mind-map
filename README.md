@@ -30,31 +30,31 @@ The pipeline implements a 3-layer semantic representation:
 Use Python 3.10+.
 
 - Core install:
-  - `pip install -e .`
+  - `python3 -m pip install -e .`
 - Optional LLM embeddings (recommended):
-  - `pip install -e .[llm]`
+  - `python3 -m pip install -e .[llm]`
 - Dev/test:
-  - `pip install -e .[dev]`
+  - `python3 -m pip install -e .[dev]`
 
 ## CLI usage
 
 Index the vault:
 
-- `vault-pipeline --root . --db .vault_index/chroma index`
+- `python3 -m vault_pipeline.cli --root . --db .vault_index/chroma index`
 
 Query semantically:
 
-- `vault-pipeline --root . --db .vault_index/chroma query "spectral graph eigenvalue methods"`
+- `python3 -m vault_pipeline.cli --root . --db .vault_index/chroma query "spectral graph eigenvalue methods"`
 
 Get collection stats:
 
-- `vault-pipeline --root . --db .vault_index/chroma stats`
+- `python3 -m vault_pipeline.cli --root . --db .vault_index/chroma stats`
 
 ### Fallback mode
 
 If transformer embeddings are not available in the environment, use:
 
-- `vault-pipeline --root . --db .vault_index/chroma --fallback-embedder index`
+- `python3 -m vault_pipeline.cli --root . --db .vault_index/chroma --fallback-embedder index`
 
 This uses a deterministic hashing embedder for local/offline smoke usage.
 
@@ -63,6 +63,7 @@ This uses a deterministic hashing embedder for local/offline smoke usage.
 - `--chunk-size` (default: `800`)
 - `--chunk-overlap` (default: `120`)
 - `--extensions` comma-separated list (default includes `.md`, `.txt`, `.py`, `.json`, `.yaml`, `.toml`, `.tex`, `.csv`, etc.)
+- `--extensions "*"` to index all readable file extensions (still bounded by max file size and decoding)
 - `--include-hidden` to include hidden paths
 - `--embedding-model` to set sentence-transformers model
 

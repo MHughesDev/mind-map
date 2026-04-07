@@ -103,7 +103,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--extensions",
         default="",
-        help="Comma-separated file extensions to index (default indexes common text/code/md types)",
+        help="Comma-separated extensions to index. Use '*' to index any readable file (default indexes common text/code/md types)",
     )
     parser.add_argument("--include-hidden", action="store_true", help="Include hidden files/folders")
     parser.add_argument(
