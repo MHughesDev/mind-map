@@ -1,0 +1,4 @@
+.vault_index/
+*.egg-info/
+__pycache__/
+.pytest_cache/
