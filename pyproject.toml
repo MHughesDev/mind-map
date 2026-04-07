@@ -1,0 +1,28 @@
+[project]
+name = "mindmap-vault-pipeline"
+version = "0.1.0"
+description = "Local-first vault indexing and retrieval pipeline for research agents."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "chromadb",
+  "numpy",
+]
+
+[project.optional-dependencies]
+llm = [
+  "sentence-transformers",
+]
+dev = [
+  "pytest",
+]
+
+[project.scripts]
+vault-pipeline = "vault_pipeline.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["vault_pipeline"]
