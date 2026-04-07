@@ -1,0 +1,19 @@
+{
+  "name": "mind-map vault pipeline",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteEnv": {
+    "HF_HOME": "/opt/hf-cache",
+    "TRANSFORMERS_CACHE": "/opt/hf-cache/hub"
+  },
+  "postCreateCommand": "pip install -U pip && pip install torch --index-url https://download.pytorch.org/whl/cpu && pip install -e '/workspace/.[dev,llm]' && python3 -m vault_pipeline.cli --help",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  }
+}

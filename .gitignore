@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.ruff_cache/
+.pytest_cache/
+
+# Local Hugging Face / model cache (when HF_HOME is under the repo)
+.cache/
