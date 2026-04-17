@@ -2,6 +2,10 @@
 
 Use this file when reading or editing anything under `Python Research/`.
 
+## How to run research
+
+- Follow **`research.md`** for step-by-step instructions: which sources to read, how to verify facts, how to fill each CSV column, and when the task is complete. This file (`AGENTS.md`) stays short; procedural detail lives in `research.md`.
+
 ## Scope
 
 - **In scope:** Libraries, frameworks, tools, and applications where **Python is the primary language** or the main integration surface (e.g. a CLI or Python SDK), regardless of host (GitHub, GitLab, Gitea, PyPI project pages linked from docs, etc.).

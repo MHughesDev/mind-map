@@ -8,6 +8,7 @@ This folder tracks **Python libraries and Python-centric repositories** from Git
 |------|---------|
 | `Python Repos.csv` | Master table of repos (see below). |
 | `AGENTS.md` | Instructions for assistants updating or using this catalog. |
+| `research.md` | Step-by-step research workflow for agents (sources, verification, CSV). |
 
 ## `Python Repos.csv` columns
 
