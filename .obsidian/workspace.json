@@ -11,13 +11,14 @@
             "id": "09e5265aff3df1f0",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "Untitled 1.base",
-                "viewName": "Table"
+                "file": "2026-09-13.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Untitled 1"
+              "icon": "lucide-file",
+              "title": "2026-09-13"
             }
           }
         ]
@@ -183,12 +184,33 @@
   },
   "active": "f55c257a13b64fcd",
   "lastOpenFiles": [
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/figures.tex",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/pages/main-47.png",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/pages/main-46.png",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/pages/main-45.png",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/pages/main-44.png",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/pages/main-43.png",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/pages/main-42.png",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/pages/main-41.png",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/pages/main-40.png",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/pages/main-39.png",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/pages/main-38.png",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/main.pdf",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/pages",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/main.log",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/main.out",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/main.toc",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build/main.aux",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/build.ps1",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/FIGURE_PAGE_MAP.md",
+    "@Personal/Research/Supra-Hodge-Laplacians-for-Multi-View-Reasoning/LatexCode.old-2026-04-05.tex",
+    "RULES.md",
+    "Untitled.base",
+    "Untitled.canvas",
+    "Untitled 1.canvas",
     "Untitled 2.canvas",
     "2026-09-13.md",
-    "Untitled 1.canvas",
-    "Untitled.canvas",
-    "Untitled 1.base",
-    "Untitled.base",
     "@Personal/Resources/skills/AGENT_HARNESS_GUIDE.md",
     "Core Domains/Health & Medicine/Medicine/Medicine.md",
     "@Personal/Resources/Templates/AI Prompts/Research Paper AI Summary Template.md",
@@ -201,10 +223,6 @@
     "@Personal/Resources/skills/BACKEND_API_GUIDE.md",
     "@Personal/Resources/skills/AUTH_SECURITY_GUIDE.md",
     "Core Domains/Social Sciences/Social Sciences.md",
-    "@Personal/Resources/skills/skills-vault",
-    "@Personal/Resources/skills-vault 1",
-    "@Personal/Resources/skills-vault",
-    "@Personal/Resources/skills",
     "Core Domains/Business & Economics/Marketing/Marketing Fundamentals/Marketing Foundations.md",
     "Core Domains/Mathematics/Algebra/Algebra.md",
     "Core Domains/Core Domains.md",
@@ -214,12 +232,6 @@
     "Core Domains/Humanities/Mythology & Folklore/Mythology & Folklore.md",
     "Core Domains/Humanities/Mythology & Folklore/World Mythologies/World Mythologies.md",
     "Core Domains/Technology/Computer Science/Computer Science.md",
-    "Core Domains/Mathematics/Discrete Math/Graph Theory/RP/RP - Graph Learning; A Survey (2021).md",
-    "Core Domains/Technology/Engineering/Engineering.md",
-    "Core Domains/Mathematics/Foundations & Logic/Foundations & Logic.md",
-    "Core Domains/Interdisciplinary & Emerging/Science & Technology Studies/Science, Technology & Society",
-    "Core Domains/Interdisciplinary & Emerging/Bioethics/Ethics of Life & Technology",
-    "Core Domains/Interdisciplinary & Emerging/Gender Studies/Gender & Society",
-    "Core Domains/Interdisciplinary & Emerging/Data Science/Data Science Practice"
+    "Core Domains/Mathematics/Discrete Math/Graph Theory/RP/RP - Graph Learning; A Survey (2021).md"
   ]
 }
