@@ -1,3 +1,11 @@
+---
+title: Spectral Graph Theory
+type: learning-topic
+domain: Mathematics
+subdomain: Graph Theory
+status: in-progress
+tags: [mathematics, graph-theory]
+---
 
 [Spectral graph theory - Wikipedia](https://en.wikipedia.org/wiki/Spectral_graph_theory)
 
