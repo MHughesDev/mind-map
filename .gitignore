@@ -1,2 +1,6 @@
 # Obsidian UI state (changes constantly)
 .obsidian/workspace.json
+
+# Python bytecode cache
+__pycache__/
+*.py[co]
